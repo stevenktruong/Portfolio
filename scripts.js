@@ -38,4 +38,25 @@ $(document).ready(function() {
             current = switchScreen(divs, current, delta);
         }
     });
+    
+    var skillPanels = $(".skill-screen").toArray();
+    var animatedDiv = -1;
+    $(".skill-name").click(function() {
+        var skillName = $(this).attr("id");
+        if (animatedDiv == -1 || !$(skillPanels[animatedDiv]).is(":animated"))
+            for (i = 0; i < skillPanels.length; i++)
+            {
+                if ($(skillPanels[i]).attr("class").indexOf(skillName) !== -1)
+                {
+                    $(skillPanels[i]).animate({"margin-top": "0vh"}, 400, function() {
+                        for (j = 0; j < skillPanels.length; j++)
+                            if (j !== i)
+                                $(skillPanels[j]).css("margin-top", "-100vh");
+                    });
+                    
+                    animatedDiv = i;
+                    break;
+                }
+            }
+    });
 });

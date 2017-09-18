@@ -2,24 +2,30 @@
 <html>
     <head>
         <title>Steven Truong</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="style.css" rel="stylesheet"></link>
+        
+        <link href="css/header.css" rel="stylesheet">
+        <link href="css/footer.css" rel="stylesheet">
+        <link href="css/screens.css" rel="stylesheet">
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="scripts.js"></script>
-        <link rel="shortcut icon" type="image/png" href="media/favicon.png"></link
+        
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     </head>
     <body>
         <div id="header">
             <span id="navbar">
                 <h1>STEVEN TRUONG</h1>
                 <span id="nav">
-                    <a href="media/resume.pdf" target="_blank">Résumé</a>
-                    <img src="buttons/left-arrow.png" class="nav-arrow" id="left-arrow"></img>
-                    <img src="buttons/right-arrow.png" class="nav-arrow" id="right-arrow"></img>
+                    <a href="files/resume.pdf" target="_blank">Résumé</a>
+                    <img src="buttons/left-arrow.png" class="nav-arrow" id="left-arrow">
+                    <img src="buttons/right-arrow.png" class="nav-arrow" id="right-arrow">
                 </span>
             </span>
         </div>
@@ -34,18 +40,35 @@
                     </div>
                     <div class="right-side">
                         <div id="portrait">
-                            <img src="media/me.png" id="me"></img>
+                            <img src="images/me.png" id="me">
                             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" id="troll"></a>
                         </div>
                     </div>
                 </span>
             </div>
-            <div class="screen" id="test">
+            <div class="screen" id="skills">
                 <span class="body">
                     <div class="left-side">
                         <div class="text">
-                            <h>Div 2</h>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat mi eget enim facilisis blandit consectetur at mi. In nec lacinia purus, vitae sagittis nulla. Quisque at justo odio. Maecenas blandit ipsum maximus, sodales nisi vitae, maximus lectus. Ut faucibus mi non mattis ultricies. Sed aliquam felis dolor, eu varius ipsum molestie vitae. Donec interdum aliquet enim eget tempus. Praesent ligula magna, iaculis eu elit ac, blandit pulvinar ipsum.</p>
+                            <h>SKILLS</h>
+                            <p class="skill-name" id="latex">LaTeX</p>
+                            <p class="skill-name" id="html">HTML</p>
+                            <p class="skill-name" id="css">CSS</p>
+                            <p class="skill-name" id="javascript">JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="skill-screen latex">
+                            <p id="info">LaTeX</p>
+                        </div>
+                        <div class="skill-screen html">
+                            <p id="info">HTML</p>
+                        </div>
+                        <div class="skill-screen css">
+                            <p id="info">CSS</p>
+                        </div>
+                        <div class="skill-screen javascript">
+                            <p id="info">JavaScript</p>
                         </div>
                     </div>
                 </span>

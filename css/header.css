@@ -1,0 +1,85 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+html, body
+{
+    font-family: "Slabo 27px", serif;
+    font-size: 16pt;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#header
+{
+    background-color: white;
+    color: #5E768D;
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    clear: both;
+    z-index: 9999;
+}
+
+#navbar h1, #navbar p, #navbar span
+{
+    font-family: Oxygen, sans-serif;
+    line-height: 200pt;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 64px;
+}
+
+#navbar h1
+{
+    font-size: 32px;
+    letter-spacing: 2pt;
+    font-weight: 600;
+    width: 10em;
+    text-align: left;
+    padding-left: 0.5em;
+}
+
+#navbar span
+{
+    float: right;
+    padding-right: 0.5em;
+}
+
+#nav a
+{
+    font-family: Oxygen, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: #5E768D;
+    font-size: 14px;
+    width: 100px;
+    height: 20px;
+    vertical-align: middle;
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 0.25em 0.5em;
+    border-width: 0.5px 0;
+}
+
+#nav a:hover
+{
+    border-style: solid;
+    cursor: pointer;
+}
+
+.nav-arrow
+{
+    width: 18px;
+    height: auto;
+}
+
+.nav-arrow:hover
+{
+    cursor: pointer;
+    opacity: 0.5;
+}
