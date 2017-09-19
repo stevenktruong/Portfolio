@@ -29,6 +29,7 @@
 {
     display: block;
     position: absolute;
+    padding-left: 0.5em;
     top: 20%;
 }
 
