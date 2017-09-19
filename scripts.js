@@ -15,6 +15,7 @@ function switchScreen(divs, current, delta)
 }
 
 $(document).ready(function() {
+    
     var divs = $("#container .screen").toArray();
     var current = 0;
     $(".nav-arrow").click(function() {
@@ -44,19 +45,25 @@ $(document).ready(function() {
     $(".skill-name").click(function() {
         var skillName = $(this).attr("id");
         if (animatedDiv == -1 || !$(skillPanels[animatedDiv]).is(":animated"))
+        {
             for (i = 0; i < skillPanels.length; i++)
             {
                 if ($(skillPanels[i]).attr("class").indexOf(skillName) !== -1)
                 {
+                    $(skillPanels[i]).css("z-index", 11);
                     $(skillPanels[i]).animate({"margin-top": "0vh"}, 400, function() {
                         for (j = 0; j < skillPanels.length; j++)
+                        {
                             if (j !== i)
                                 $(skillPanels[j]).css("margin-top", "-100vh");
+                            $(skillPanels[j]).css("z-index", 10);
+                        }
                     });
                     
                     animatedDiv = i;
                     break;
                 }
             }
+        }
     });
 });
