@@ -131,6 +131,7 @@ p.skill-name
 {
     width: 85%;
     margin: auto;
+    margin-bottom: 1em;
 }
 
 p a
