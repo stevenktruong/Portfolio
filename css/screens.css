@@ -89,11 +89,11 @@ headline
     background-color: #F7E8F0;
 }
 
-.skill-name
+p.skill-name
 {
     color: #F7E8F0;
     background-color: black;
-    font-size: 18pt;
+    font-size: 16pt;
     width: 20vw;
     text-align: right;    
     padding-right: 0.5em;
