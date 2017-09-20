@@ -35,9 +35,8 @@ html, body
 
 #my-name
 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: Raleway, sans-serif;
     font-size: 28pt;
-    letter-spacing: -1pt;
     font-weight: 700;
     width: 10em;
     text-align: left;

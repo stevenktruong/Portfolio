@@ -15,7 +15,7 @@
     top: 64px;
     bottom: 36px;
     width: 100%;
-    padding: 0 0.5em;
+    padding: 0 1em;
 }
 
 .left-side
@@ -30,14 +30,13 @@
 {
     display: block;
     position: absolute;
-    padding-left: 0.5em;
     top: 20%;
 }
 
 headline
 {
     font-family: Raleway, sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 24pt;
     line-height: 24pt;
 }
