@@ -51,12 +51,15 @@ $(document).ready(function() {
                 if ($(skillPanels[i]).attr("class").indexOf(skillName) !== -1)
                 {
                     $(skillPanels[i]).css("z-index", 11);
+                    $(skillPanels[i]).css("display", "block");
                     $(skillPanels[i]).animate({"margin-top": "0vh"}, 400, function() {
                         for (j = 0; j < skillPanels.length; j++)
                         {
                             if (j !== i)
                                 $(skillPanels[j]).css("margin-top", "-100vh");
+                            
                             $(skillPanels[j]).css("z-index", 10);
+                            $(skillPanels[j]).css("display", "hidden");
                         }
                     });
                     

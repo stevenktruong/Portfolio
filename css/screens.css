@@ -1,3 +1,4 @@
+
 .screen
 {
     position: absolute;
@@ -23,6 +24,7 @@
     top: 0;
     bottom: 0;
     width: 30vw;
+    overflow-y: scroll;
 }
 
 .text
@@ -70,6 +72,7 @@ headline
     height: 90%;
     width: auto;
     max-height: 750px;
+    max-width: 750px;
 }
 
 #me
@@ -115,16 +118,18 @@ p.skill-name
     position: absolute;
     color: black;
     background-color: white;
-    margin-top: -100vh;
+    margin-top: -1000px;
     height: 70%;
     width: 30vw;
     z-index: 10;
+    overflow-y: scroll;
+    display: hidden;
 }
 
 .skill-screen img
 {
-    width: auto;
-    height: 120px;
+    width: 90%;
+    height: auto;
     display: block;
     margin: auto;
     padding: 2em 0;
@@ -152,4 +157,53 @@ p a:hover
 #test2
 {
     background-color: #99CBE8;
+}
+
+@media screen and (max-width: 900px)
+{
+    html, body
+    {
+        font-size: 9pt;
+    }
+    
+    headline
+    {
+        font-size: 20pt;
+    }
+    
+    .text
+    {
+        top: 10%;
+    }
+    
+    #portrait
+    {
+        width: 50%;
+        height: 50%;
+    }
+    
+    #me
+    {
+        width: 100%;
+        height: auto;
+    }
+    
+    .skill-screen
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    .left-side
+    {
+        width: 50vw;
+    }
+    
+    .right-side
+    {
+        width: 50vw;
+        left: 50vw;
+    }
 }
