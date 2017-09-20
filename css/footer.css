@@ -1,6 +1,6 @@
 #footer
 {
-    background-color: white;
+    //background-color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -13,7 +13,7 @@
 
 #footer p
 {
-    color: #5E768D;
+    //color: #5E768D;
     font-family: Oxygen, sans-serif;
     font-weight: 300;
     font-size: 12pt;
