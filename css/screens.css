@@ -24,7 +24,6 @@
     top: 0;
     bottom: 0;
     width: 30vw;
-    overflow-y: scroll;
 }
 
 .text
@@ -107,7 +106,7 @@ p.skill-name
     transition: 0.25s;
 }
 
-.skill-name:hover
+p.skill-name:hover
 {
     transform: scale(1.5);
     cursor: pointer;
@@ -160,12 +159,7 @@ p a:hover
 }
 
 @media screen and (max-width: 900px)
-{
-    html, body
-    {
-        font-size: 9pt;
-    }
-    
+{   
     headline
     {
         font-size: 20pt;
@@ -194,16 +188,23 @@ p a:hover
     }
 }
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 600px)
 {
     .left-side
     {
-        width: 50vw;
+        width: 40vw;
+    }
+    
+    p.skill-name
+    {
+        font-size: 10pt;
+        padding: 0.25em 0.75em 0.25em 0em;
+        width: 30vw;
     }
     
     .right-side
     {
-        width: 50vw;
-        left: 50vw;
+        width: 60vw;
+        left: 40vw;
     }
 }

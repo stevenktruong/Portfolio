@@ -37,7 +37,7 @@ html, body
 
 #my-name
 {
-    font-size: 32px;
+    font-size: 24pt;
     letter-spacing: 2pt;
     font-weight: 600;
     width: 10em;
@@ -81,4 +81,21 @@ html, body
 {
     cursor: pointer;
     opacity: 0.5;
+}
+
+@media screen and (max-width: 900px)
+{
+    html, body
+    {
+        font-size: 9pt;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    #my-name
+    {
+        font-size: 18pt;
+        width: 10em;
+    }
 }
