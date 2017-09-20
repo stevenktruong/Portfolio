@@ -70,14 +70,16 @@ html, body
     cursor: pointer;
 }
 
-.nav-arrow
+i.nav-arrow
 {
     width: 18px;
     vertical-align: middle;
     height: auto;
+    display: inline-block;
+    font-size: 14pt;
 }
 
-.nav-arrow:hover
+i.nav-arrow:hover
 {
     cursor: pointer;
     opacity: 0.5;

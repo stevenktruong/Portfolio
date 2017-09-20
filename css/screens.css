@@ -121,6 +121,9 @@ p.skill-name:hover
     height: 70%;
     width: 30vw;
     z-index: 10;
+    border-style: double;
+    border-color: white;
+    border-radius: 12px;
     overflow-y: scroll;
     display: hidden;
 }
