@@ -87,12 +87,17 @@ html, body
 {
     html, body
     {
-        font-size: 9pt;
+        font-size: 10pt;
     }
 }
 
 @media screen and (max-width: 600px)
 {
+    html, body
+    {
+        font-size: 9pt;
+    }
+    
     #my-name
     {
         font-size: 18pt;
