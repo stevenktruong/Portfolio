@@ -15,7 +15,6 @@
     top: 64px;
     bottom: 36px;
     width: 100%;
-    padding: 0 1em;
 }
 
 .left-side
@@ -25,6 +24,7 @@
     bottom: 0;
     width: 30vw;
     overflow-y: scroll;
+    padding-left: 0.5em;
     z-index: 99;
 }
 
@@ -96,6 +96,11 @@ headline
     background-color: #F7E8F0;
 }
 
+ul
+{
+    position: absolute;
+}
+
 li.skill-name
 {
     font-family: "Merriweather", serif;
@@ -104,15 +109,17 @@ li.skill-name
     color: white;
     background-color: black;
     display: block;
+    position: relative;
     text-align: right;
     padding: 0.125em 0.5em 0.125em 0em;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
     transition: 0.25s;
 }
 
 li.skill-name:hover
 {
-    transform: scale(1.5);
+    transform: scale(1.25);
     cursor: pointer;
 }
 
@@ -172,14 +179,10 @@ p a:hover
         font-size: 20pt;
     }
     
-    button.skill-name
+    li.skill-name
     {
-        width: 30vw;
-    }
-    
-    .text
-    {
-        top: 10%;
+        font-size: 12pt;
+        width: 20vw;
     }
     
     #portrait
@@ -200,6 +203,7 @@ p a:hover
         width: 40vw;
     }
     
+    
     li.skill-name
     {
         font-size: 10pt;
@@ -215,6 +219,6 @@ p a:hover
     
     #portrait
     {
-        height: 40%;
+        height: 35%;
     }
 }
