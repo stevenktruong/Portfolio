@@ -13,7 +13,8 @@ html, body
     font-weight: 300;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #header
