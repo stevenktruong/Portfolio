@@ -93,20 +93,23 @@ headline
     background-color: #F7E8F0;
 }
 
-p.skill-name
+button.skill-name
 {
-    color: white;
-    background-color: black;
+    font-family: "Merriweather", serif;
     font-size: 16pt;
     width: 20vw;
+    color: white;
+    background-color: black;
+    border: none;
+    text-decoration: none;
+    display: block;
     text-align: right;    
     padding: 0.125em 0.5em 0.125em 0em;
     margin-top: 0.5em;
-    margin-bottom: 0;
     transition: 0.25s;
 }
 
-p.skill-name:hover
+button.skill-name:hover
 {
     transform: scale(1.5);
     cursor: pointer;
@@ -119,7 +122,7 @@ p.skill-name:hover
     background-color: white;
     margin-top: -1000px;
     height: 70%;
-    width: 30vw;
+    width: 25vw;
     z-index: 10;
     border-style: double;
     border-color: white;
@@ -168,6 +171,11 @@ p a:hover
         font-size: 20pt;
     }
     
+    button.skill-name
+    {
+        width: 30vw;
+    }
+    
     .text
     {
         top: 10%;
@@ -191,11 +199,11 @@ p a:hover
         width: 40vw;
     }
     
-    p.skill-name
+    button.skill-name
     {
         font-size: 10pt;
         padding: 0.25em 0.75em 0.25em 0em;
-        width: 30vw;
+        width: 25vw;
     }
     
     .right-side

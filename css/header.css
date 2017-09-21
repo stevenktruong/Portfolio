@@ -68,16 +68,19 @@ html, body
     cursor: pointer;
 }
 
-i.nav-arrow
+button.nav-arrow
 {
     width: 18px;
+    text-decoration: none;
+    border: none;
+    background: none;
     vertical-align: middle;
     height: auto;
     display: inline-block;
     font-size: 14pt;
 }
 
-i.nav-arrow:hover
+button.nav-arrow:hover
 {
     cursor: pointer;
     opacity: 0.5;
