@@ -41,7 +41,7 @@ $(document).ready(function() {
         }
     });
     
-    $(document).swipe( {swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+    $(document).swipe( {allowPageScroll: "vertical", swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         if (!$(divs[current]).is(":animated") && (direction == "left" || direction == "right"))
         {
             var delta = 1;
@@ -50,7 +50,6 @@ $(document).ready(function() {
 
              current = switchScreen(divs, current, delta);
         }
-        allowPageScroll: "vertical"
     }});
     
     var skillPanels = $(".skill-screen").toArray();
