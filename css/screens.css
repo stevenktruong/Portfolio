@@ -24,6 +24,7 @@
     top: 0;
     bottom: 0;
     width: 30vw;
+    z-index: 99;
 }
 
 .text
@@ -101,7 +102,7 @@ li.skill-name
     color: white;
     background-color: black;
     display: block;
-    text-align: right;    
+    text-align: right;
     padding: 0.125em 0.5em 0.125em 0em;
     margin-top: 0.5em;
     transition: 0.25s;
@@ -201,7 +202,6 @@ p a:hover
     {
         font-size: 10pt;
         padding: 0.25em 0.75em 0.25em 0em;
-        overflow: auto;
         width: 25vw;
     }
     
