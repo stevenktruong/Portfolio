@@ -8,6 +8,7 @@
 html, body
 {
     font-family: "Merriweather", serif;
+    position: relative;
     font-size: 12pt;
     font-weight: 300;
     width: 100vw;
