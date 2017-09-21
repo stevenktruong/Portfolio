@@ -42,12 +42,14 @@ $(document).ready(function() {
     });
     
     $(document).swipe( {swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        var delta = 1;
-        if (direction == "right")
-            delta = -1;
-        
-        if (direction == "left" || direction == "right")
-            current = switchScreen(divs, current, delta);
+        if (!$(divs[current]).is(":animated") && (direction == "left" || direction == "right"))
+        {
+            var delta = 1;
+            if (direction == "right")
+                delta = -1;
+
+             current = switchScreen(divs, current, delta);
+        }
     }});
     
     var skillPanels = $(".skill-screen").toArray();
