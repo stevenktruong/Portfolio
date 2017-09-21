@@ -126,7 +126,7 @@ li.skill-name:hover
     border-style: double;
     border-color: white;
     border-radius: 12px;
-    overflow-y: scroll;
+    overflow: scroll;
     display: hidden;
 }
 
