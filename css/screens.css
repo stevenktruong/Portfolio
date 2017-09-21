@@ -81,10 +81,12 @@ headline
 #troll
 {
     position: absolute;
+    background-color: black;
     left: 52%;
     top: 48%;
     width: 3%;
     height: 4%;
+    z-index: 99;
 }
 
 #skills
@@ -174,14 +176,7 @@ p a:hover
     
     #portrait
     {
-        width: 50%;
         height: 50%;
-    }
-    
-    #me
-    {
-        width: 100%;
-        height: auto;
     }
     
     .skill-screen
@@ -208,5 +203,10 @@ p a:hover
     {
         width: 60vw;
         left: 40vw;
+    }
+    
+    #portrait
+    {
+        height: 40%;
     }
 }
