@@ -50,6 +50,7 @@ $(document).ready(function() {
 
              current = switchScreen(divs, current, delta);
         }
+        allowPageScroll: "vertical"
     }});
     
     var skillPanels = $(".skill-screen").toArray();
