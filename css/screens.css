@@ -222,3 +222,11 @@ p a:hover
         height: 35%;
     }
 }
+
+@media screen and (max-height: 600px)
+{
+    .text
+    {
+        top: 5%;
+    }
+}
