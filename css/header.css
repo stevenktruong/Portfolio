@@ -62,6 +62,7 @@ html, body
     width: 100px;
     height: 20px;
     vertical-align: middle;
+    transition: 0.25s;
     margin: 0 25px;
 }
 
@@ -81,6 +82,7 @@ button.nav-arrow
     height: auto;
     display: inline-block;
     font-size: 14pt;
+    transition: 0.25s;
 }
 
 button.nav-arrow:hover
