@@ -9,7 +9,6 @@ function switchScreen(divs, current, delta)
 
     nextDiv.css("left", (delta * 100) + "%");
     currentDiv.animate({left: (-1 * delta * 100) + "%"}, time);
-    $("html, body").css("background-color", nextDiv.css("background-color"));
     nextDiv.animate({left: "0%"}, time);
 
     return next;
