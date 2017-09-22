@@ -12,6 +12,7 @@
 {
     position: absolute;
     min-width: 600px;
+    overflow: hidden;
     top: 64px;
     bottom: 36px;
     width: 100%;
@@ -230,4 +231,5 @@ p a:hover
     {
         top: 5%;
     }
+    
 }
