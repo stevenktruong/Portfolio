@@ -23,6 +23,7 @@
     top: 0;
     bottom: 0;
     width: 30vw;
+    z-index: 99;
     overflow-y: scroll;
     padding-left: 0.5em;
 }
