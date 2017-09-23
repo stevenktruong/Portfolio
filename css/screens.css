@@ -135,7 +135,7 @@ li.skill-name:hover
     z-index: 10;
     border-style: double;
     border-color: white;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow-y: auto;
     display: hidden;
 }
