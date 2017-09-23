@@ -20,6 +20,21 @@ body
     position: relative;
 }
 
+::-webkit-scrollbar
+{
+    width: 3pt;
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 #header
 {
     //color: #5E768D;

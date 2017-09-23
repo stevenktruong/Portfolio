@@ -25,7 +25,7 @@
     bottom: 0;
     width: 30vw;
     z-index: 99;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-left: 0.5em;
 }
 
@@ -136,7 +136,7 @@ li.skill-name:hover
     border-style: double;
     border-color: white;
     border-radius: 12px;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: hidden;
 }
 
