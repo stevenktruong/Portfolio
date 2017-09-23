@@ -7,9 +7,9 @@ function switchScreen(divs, current, delta)
     var currentDiv = $(divs[current]);
     var nextDiv = $(divs[next]);
 
-    nextDiv.css("left", (delta * 100) + "%");
-    currentDiv.animate({left: (-1 * delta * 100) + "%"}, time);
-    nextDiv.animate({left: "0%"}, time);
+    nextDiv.css("left", (delta * 100) + "%", {queue: false});
+    currentDiv.animate({left: (-1 * delta * 100) + "%"}, {duration: time, queue: false});
+    nextDiv.animate({left: "0%"}, {duration: time, queue: false});
 
     return next;
 }
