@@ -1,5 +1,4 @@
-function switchScreen(divs, current, delta)
-{
+function switchScreen(divs, current, delta) {
     var nDivs = divs.length;
     var time = 400;
     
@@ -22,8 +21,7 @@ $(document).ready(function() {
         if (!$(divs[current]).is(":animated"))
         {
             var delta = 1;
-            if ($(this).is("#left-arrow"))
-                delta = -1;
+            if ($(this).is("#left-arrow")) delta = -1;
 
             current = switchScreen(divs, current, delta);
         }
@@ -32,9 +30,7 @@ $(document).ready(function() {
     $(document).keydown(function(key) {
         if (!$(divs[current]).is(":animated") && (key.which == 37 || key.which == 39))
         {
-            var delta = 1;
-            if (key.which == 37)
-                delta = -1;
+            var delta = (key.which === 37) ? -1 : 1;
 
             current = switchScreen(divs, current, delta);
         }
@@ -43,9 +39,7 @@ $(document).ready(function() {
     $(document).swipe( {allowPageScroll: "vertical", swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         if (!$(divs[current]).is(":animated") && (direction == "left" || direction == "right"))
         {
-            var delta = 1;
-            if (direction == "right")
-                delta = -1;
+            var delta = (direction === "right") ? -1 : 1;
 
              current = switchScreen(divs, current, delta);
         }
