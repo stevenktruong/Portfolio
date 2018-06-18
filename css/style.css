@@ -6,7 +6,8 @@
 {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html
@@ -58,7 +59,8 @@ h1
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 h1:after
@@ -109,6 +111,7 @@ p
 
 header
 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(20, 20, 20, 0.6)), to(rgb(20, 20, 20, 0.6))), url('/css/img/background.jpg');
   background-image: linear-gradient(rgb(20, 20, 20, 0.6), rgb(20, 20, 20, 0.6)), url('/css/img/background.jpg');
   background-position: center;
   background-attachment: fixed;
@@ -160,6 +163,7 @@ nav a
   margin-left: 12px;
   color: rgb(43, 43, 43);
   border-bottom-color: #fff;
+  -webkit-transition: border-bottom-color 0.3s;
   transition: border-bottom-color 0.3s;
 }
 
@@ -220,6 +224,7 @@ nav a
 .project a *
 {
   opacity: 1;
+  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -266,6 +271,7 @@ footer
 {
   text-decoration: none;
   color: #000;
+  -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
