@@ -1,110 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Steven Truong</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-        <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
-        
-        <link href="css/main.css" rel="stylesheet">
-        <link href="css/footer.css" rel="stylesheet">
-        <link href="css/screens.css" rel="stylesheet">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jQuery.touchSwipe.min.js"></script>
-        <script src="js/scripts.js"></script>
-        
-        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    </head>
-    <body>
-        <div id="header">
-            <span id="navbar">
-                <p id="my-name">STEVEN TRUONG</p>
-                <span id="nav">
-                    <a href="files/resume.pdf" target="_blank">Résumé</a>
-                    <button type="button" class="fa fa-angle-left nav-arrow" id="left-arrow"></button>
-                    <button type="button" class="fa fa-angle-right nav-arrow" id="right-arrow"></button>
-                </span>
-            </span>
+  <head>
+    <title>Steven Truong</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="#main" class="header-name">ST</a>
+        <div>
+          <ul class="nav-buttons">
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="files/resume.pdf">Resume</a></li>
+            <li><a href="">Math</a></li>
+          </ul> 
         </div>
-        <div id="container">
-            <div class="screen" id="about">
-                <span class="body">
-                    <span class="left-side">
-                        <span class="text">
-                            <headline>ABOUT ME</headline>
-                            <p>I'm a second year undergraduate at University of California, Los Angeles. I'm a mathematics of computation major, but I also enjoy physics and anything similar.</p>
-                            <p>I'm currently planning to complete my Bachelor's with a bunch of computer science and statistics classes under my belt.</p>
-                            <p>When I'm not working on homework or any projects, I like to play games such as CS:GO and Super Smash Bros. Melee.</p>
-                        </span>
-                    </span>
-                    <span class="right-side">
-                        <span id="portrait">
-                            <img src="images/me.png" usemap="#troll" id="me">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" id="troll"></a>
-                        </span>
-                    </span>
-                </span>
-            </div>
-            <div class="screen" id="skills">
-                <span class="body">
-                    <span class="left-side">
-                        <span class="text">
-                            <headline>SKILLS</headline>
-                            <ul>
-                                <li class="skill-name" id="latex">LaTeX</li>
-                                <li class="skill-name" id="html-css-js">HTML/CSS/JS</li>
-                            </ul>
-                        </span>
-                    </span>
-                    <span class="right-side">
-                        <span class="skill-screen latex">
-                            <img src="images/latex.png">
-                            <p class="info">I write almost all of my documents in LaTeX, such as my homework and my résumé. I'm also writing a small book on differential equations based on notes I took in MATH 33B, which is the introductory diffeqs class at UCLA.</p>
-                            <p class="info">You can check my progress as well as my other projects on my <a href="https://github.com/stevenktruong" target="_blank">GitHub</a>.</p>
-                        </span>
-                        <span class="skill-screen html-css-js">
-                            <img src="images/html-css-js.png">
-                            <p>I'm new to web development, but I'm eager to learn and improve as much as I can. This website started out as just messing around in my editor for practice, but it inevitably turned into my first web project. I used what I learned to build this website completely from scratch.</p>
-                            <p>This is currently the only web-related project I've worked on.</p>
-                        </span>
-                        <span class="skill-screen javascript">
-                            <p class="info">JavaScript</p>
-                        </span>
-                    </span>
-                </span>
-            </div>
-            <div class="screen" id="test2">
-                <span class="body">
-                    <span class="left-side">
-                        <span class="text">
-                            <headline>WORK IN PROGRESS</headline>
-                            <p>Nothing here.</p>
-                        </span>
-                    </span>
-                </span>
-            </div>
+      </nav>
+      <section class="main" id="main">
+        <div class="row">
+          <h1>Steven Truong</h1>
         </div>
-        <span id="footer">
-            <span id="social-media">
-                <span class="social-container">
-                    <a href="https://www.facebook.com/steven.truong.169" target="_blank" class="fa fa-facebook"></a>
-                </span>
-                <span class="social-container">
-                    <a href="https://www.instagram.com/stevenktruong" target="_blank" class="fa fa-instagram"></a>
-                </span>
-                <span class="social-container">
-                    <a href="https://github.com/stevenktruong" target="_blank" class="fa fa-github"></a>
-                </span>
-                <span class="social-container">
-                    <a href="https://www.linkedin.com/in/steven-t-180126109" target="_blank" class="fa fa-linkedin"></a>
-                </span>
-            </span>
-            <p>ST</p>
-        </span>
-    </body>
+      </section>
+    </header>
+
+    <section class="bio clearfix">
+      <div class="row">
+        <img src="img/me.png" class="portrait">
+          <h2>Who Am I?</h2>
+          <p>
+            I'm a third year undergraduate mathematics of computation major at UCLA.
+            My favorite math topic is linear algebra, and some of my core interests are machine learning and data science. <br><br>
+            In my free time, I like to play my violin or play Super Smash Bros. Melee for the Nintendo Gamecube.
+          </p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="row">
+        <h2>My Projects</h2>
+        <div class="project clearfix">
+          <h3>BruinMeet</h3>
+          <a href="https://www.bruinmeet.com/" class="clearfix"><img src="img/bruinmeet.png"></a>
+          I'm currently one of the back-end developers for BruinMeet, which is a UCLA dating app.
+          We use Node.js on the back-end, and I've worked on features such as custom profile pictures and mobile notifications. <br><br>
+          I'm planning on learning how to implement machine learning algorithms into our matchmaking process.
+        </div>
+        <div class="project clearfix">
+          <h3>2048 Dueling Deep Q-Network</h3>
+          <a href="https://github.com/zeroblackalpha/2048-Dueling-DQN" class="clearfix"><i class="fab fa-github"></i></a>
+          For my final project in MATH 156 (Machine Learning), I worked with a group on a dueling DQN for the game 2048.
+          The network was implemented in Python with TensorFlow. <br><br>
+          The network does pretty well&mdash;it scores 12000 points on average, and it hits the 2048 tile roughly 5% of the time after sufficient training.
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="row">
+        <h2>Contact Me</h2>
+        <ul class="contact-info">
+          <li><i class="fas fa-envelope icon-small"></i>steventruong@g.ucla.edu</li>
+          <li><i class="fab fa-github icon-small"></i><a href="https://github.com/stevenktruong">stevenktruong</a></li>
+          <li><i class="fab fa-linkedin icon-small"></i><a href="https://www.linkedin.com/in/steven-t-180126109/">Steven Truong</a></li>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
