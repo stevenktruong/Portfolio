@@ -39,8 +39,15 @@ section
 /* Reused Components */
 /* ---------------------------------------------------------------- */
 
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 h1
 {
+  position: absolute;
   font-family: 'Roboto', sans-serif;
   font-size: 400%;
   font-weight: 100;
@@ -48,7 +55,10 @@ h1
   letter-spacing: 4px;
   color: #ddd;
   text-align: center;
-  padding-top: 25%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1:after
@@ -102,7 +112,7 @@ header
   background-image: linear-gradient(rgb(20, 20, 20, 0.6), rgb(20, 20, 20, 0.6)), url('/css/img/background.jpg');
   background-position: center;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
   height: 100vh;
 }
 
