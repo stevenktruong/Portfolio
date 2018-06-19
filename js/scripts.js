@@ -7,9 +7,24 @@ $(document).ready(function() {
 
   // Expand topics in math section
   $('.sub-links').off();
-  $('.expand-topic').on('click', function(event) {
+  $('.expand-topics').on('click', function(event) {
     let toExpand = $(this).next();
     toExpand.slideToggle(500);
+  });
+
+  // Change a topic
+  $('.change-topic').on('click', function(event) {
+    let newHeading = $(this).text();
+    console.log(newHeading);
+    $('.math-content').animate({ opacity: 0 }, 250, function(event) {
+      $('.math-content').empty();
+      $('.math-content').append(`
+        <h3>${newHeading}</h3>
+        ${mathText[newHeading]}
+      `);
+      MathJax.Hub.Typeset();
+      $('.math-content').animate({ opacity: 1 }, 250);
+    });
   });
 
   // Smooth scrolling

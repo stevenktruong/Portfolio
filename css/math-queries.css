@@ -3,7 +3,7 @@
   .math-main
   {
     padding-bottom: 60px;
-    height: auto;
+    min-height: 100vh;
   }
   
   .math-main .row
