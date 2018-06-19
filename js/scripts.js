@@ -16,14 +16,14 @@ $(document).ready(function() {
   $('.change-topic').on('click', function(event) {
     let newHeading = $(this).text();
     console.log(newHeading);
-    $('.math-content').animate({ opacity: 0 }, 250, function(event) {
+    $('.math-content').animate({ opacity: 0 }, 300, function(event) {
       $('.math-content').empty();
       $('.math-content').append(`
         <h3>${newHeading}</h3>
         ${mathText[newHeading]}
       `);
       MathJax.Hub.Typeset();
-      $('.math-content').animate({ opacity: 1 }, 250);
+      $('.math-content').animate({ opacity: 1 }, 300);
     });
   });
 

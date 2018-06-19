@@ -4,6 +4,7 @@
   {
     padding-bottom: 60px;
     min-height: 100vh;
+    height: auto;
   }
   
   .math-main .row
@@ -16,7 +17,6 @@
     float: none;
     padding: 0px 20px;
     width: 100%;
-    height: auto;
   }
 
   .math-nav
@@ -24,6 +24,5 @@
     padding: 0px 20px;
     padding-top: 100px;
     padding-bottom: 20px;
-    min-height: 0;
   }
 }
