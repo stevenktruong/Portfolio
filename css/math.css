@@ -2,11 +2,17 @@
 /* Layout */
 /* ---------------------------------------------------------------- */
 
-.math-main { padding-bottom: 0; }
-.math-nav, .math-content
+.math-main
 {
-  padding: 40px 20px;
-  min-height: 100vh;
+  padding: 0;
+  height: 100vh;
+}
+
+.math-main .row
+{
+  padding: 100px 10px;
+  padding-bottom: 0;
+  height: 100%;
 }
 
 .math-nav
@@ -21,7 +27,11 @@
   display: block;
   float: right;
   width: 80%;
+  height: 100%;
   line-height: 120%;
+  padding: 0px 20px;
+  padding-bottom: 60px;
+  overflow-y: scroll;
 }
 
 /* ---------------------------------------------------------------- */

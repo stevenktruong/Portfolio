@@ -181,7 +181,11 @@ nav a
 
 /* ---- Mobile Nav ---- */
 
-.nav-mobile { display: none; }
+.nav-mobile
+{
+  position: fixed;
+  display: none;
+}
 
 .menu-button
 {
