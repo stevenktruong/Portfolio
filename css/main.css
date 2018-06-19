@@ -18,6 +18,11 @@ html
   text-align: justify;
 }
 
+body
+{
+  overflow: hidden;
+}
+
 .row
 {
   width: 1140px;
