@@ -1,16 +1,18 @@
 @media only screen and (max-width: 800px)
 {
+  .math-main { padding-bottom: 60px; }
+
   .math-nav, .math-content
   {
     float: none;
     padding: 0px 20px;
     width: 100%;
-    min-height: 0;
   }
 
   .math-nav
   {
     padding: 30px 20px;
     padding-top: 40px;
+    min-height: 0;
   }
 }

@@ -12,7 +12,13 @@
   body { width: 100vw; }
   h1 { font-size: 200%; }
   .nav-buttons { display: none; }
-  .header-name:link, .header-name:visited { border: 0; }
+
+  .header-name:link, .header-name:visited
+  {
+    margin-left: 0px;
+    border: 0;
+  }
+
   .header-name:hover, .header-name:active { border: 0; }
   .nav-mobile { display: block; }
 
@@ -36,14 +42,15 @@
   {
     display: block;
     width: 50%;
-    margin: 15px auto;
-    margin-top: -25px;
+    margin: 0px auto;
+    margin-top: -10px;
   }
 
   .project a i
   {
+    font-size: 800%;
     display: block;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
 }
