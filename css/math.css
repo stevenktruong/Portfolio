@@ -11,7 +11,7 @@
 .math-main .row
 {
   padding: 100px 10px;
-  padding-bottom: 0;
+  padding-bottom: 40px;
   height: 100%;
 }
 
@@ -30,7 +30,7 @@
   height: 100%;
   line-height: 120%;
   padding: 0px 20px;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   overflow-y: scroll;
 }
 
