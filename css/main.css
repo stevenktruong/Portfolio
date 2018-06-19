@@ -235,7 +235,7 @@ nav a
 header
 {
   display: block;
-  background-image: url("./img/background.png");
+  background-image: url("./img/background.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -320,7 +320,7 @@ header
 footer
 {
   display: block;
-  background-image: url("./img/background.png");
+  background-image: url("./img/background.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
