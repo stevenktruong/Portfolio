@@ -9,6 +9,13 @@
 
 @media only screen and (max-width: 480px)
 {
+  body { width: 100vw; }
+  h1 { font-size: 200%; }
+  .nav-buttons { display: none; }
+  .header-name:link, .header-name:visited { border: 0; }
+  .header-name:hover, .header-name:active { border: 0; }
+  .nav-mobile { display: block; }
+
   .portrait
   {
     display: block;

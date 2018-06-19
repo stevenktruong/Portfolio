@@ -11,30 +11,37 @@
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/queries.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
   </head>
 
-  <body>
+  <body id="main">
+    <nav>
+      <a href="#main" class="header-name">ST</a>
+      <div class="nav-desktop">
+        <ul class="nav-buttons">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="math.html">Math</a></li>
+        </ul> 
+      </div>
+      <div class="nav-mobile clearfix">
+        <i class="fas fa-bars menu-button"></i>
+        <ul class="nav-mobile-buttons">
+          <li><a href="math.html">Math</a></li>
+          <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul> 
+      </div>
+    </nav>
+
     <header>
-      <nav>
-        <a href="#main" class="header-name">ST</a>
-        <div>
-          <ul class="nav-buttons">
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="files/resume.pdf">Resume</a></li>
-            <li><a href="">Math</a></li>
-          </ul> 
-        </div>
-      </nav>
-      <section class="main" id="main">
-        <div class="overlay">
-          <h1>Steven Truong</h1>
-        </div>
-      </section>
+      <div class="darken">
+        <h1>Steven Truong</h1>
+      </div>
     </header>
 
     <section class="bio clearfix">
@@ -54,7 +61,7 @@
         <h2>My Projects</h2>
         <div class="project clearfix">
           <h3>BruinMeet</h3>
-          <a href="https://www.bruinmeet.com/" class="clearfix"><img src="img/bruinmeet.png" alt="BruinMeet logo"></a>
+          <a href="https://www.bruinmeet.com/" target="_blank" class="clearfix"><img src="img/bruinmeet.png" alt="BruinMeet logo"></a>
           <p>
             I'm currently one of the back-end developers for BruinMeet, which is a UCLA dating app.
             We use Node.js on the back-end, and I've worked on features such as custom profile pictures and mobile notifications. <br><br>
@@ -63,7 +70,7 @@
         </div>
         <div class="project clearfix">
           <h3>2048 Dueling Deep Q-Network</h3>
-          <a href="https://github.com/zeroblackalpha/2048-Dueling-DQN" class="clearfix"><i class="fab fa-github"></i></a>
+          <a href="https://github.com/zeroblackalpha/2048-Dueling-DQN" target="_blank" class="clearfix"><i class="fab fa-github"></i></a>
           <p>
             For my final project in MATH 156 (Machine Learning), I worked with a group on a dueling DQN for the game 2048.
             The network was implemented in Python with TensorFlow. <br><br>
@@ -74,13 +81,15 @@
     </section>
 
     <footer id="contact">
-      <div class="row">
-        <h2>Contact Me</h2>
-        <ul class="contact-info">
-          <li><i class="fas fa-envelope icon-small"></i>steventruong@g.ucla.edu</li>
-          <li><i class="fab fa-github icon-small"></i><a href="https://github.com/stevenktruong">stevenktruong</a></li>
-          <li><i class="fab fa-linkedin icon-small"></i><a href="https://www.linkedin.com/in/steven-t-180126109/">Steven Truong</a></li>
-        </ul>
+      <div class="darken">
+        <div class="row">
+          <h2>Contact Me</h2>
+          <ul class="contact-info">
+            <li><i class="fas fa-envelope icon-small"></i>steventruong@g.ucla.edu</li>
+            <li><i class="fab fa-github icon-small"></i><a href="https://github.com/stevenktruong" target="_blank">stevenktruong</a></li>
+            <li><i class="fab fa-linkedin icon-small"></i><a href="https://www.linkedin.com/in/steven-t-180126109/" target="_blank">Steven Truong</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>

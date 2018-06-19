@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  // Mobile menu button
+  $('.menu-button').on('click', () => {
+    let newPos = ($('.nav-mobile-buttons').css('top') === '60px') ? '-120px' : '60px';
+    $('.nav-mobile-buttons').animate({ top: newPos }, 500);
+  });
+
+  // Smooth scrolling
   $('a[href*="#"]')
   .not('[href="#"]')
   .not('[href="#0"]')

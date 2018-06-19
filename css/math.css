@@ -1,0 +1,52 @@
+/* ---------------------------------------------------------------- */
+/* Layout */
+/* ---------------------------------------------------------------- */
+
+.math-main { padding-bottom: 0; }
+.math-nav, .math-content
+{
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.math-nav
+{
+  display: block;
+  float: left;
+  width: 20%;
+}
+
+.math-content
+{
+  display: block;
+  float: right;
+  width: 80%;
+  line-height: 120%;
+}
+
+/* ---------------------------------------------------------------- */
+/* Nav */
+/* ---------------------------------------------------------------- */
+
+.math-links
+{
+  list-style: none;
+}
+
+.math-links li a:link, .math-links li a:visited
+{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: black;
+  height: 100%;
+  padding: 8px 10px;
+  border-left: 4px solid #dff8ea;
+  -webkit-transition: border-left-color 0.3s;
+  transition: border-left-color 0.3s;
+}
+
+.math-links li a:hover, .math-links li a:active
+{
+  border-left-color: #2ecc71;
+}
