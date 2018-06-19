@@ -8,7 +8,6 @@ $(document).ready(function() {
   // Expand topics in math section
   $('.sub-links').off();
   $('.expand-topic').on('click', function(event) {
-    event.stopPropagation();
     let toExpand = $(this).next();
     toExpand.slideToggle(500);
   });
