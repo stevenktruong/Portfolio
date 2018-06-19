@@ -11,26 +11,30 @@
 .math-main .row
 {
   padding: 100px 10px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
+  height: 100%;
+}
+
+.math-nav, .math-content
+{
+  display: block;
   height: 100%;
 }
 
 .math-nav
 {
-  display: block;
   float: left;
+  margin-top: 4px;
   width: 20%;
 }
 
 .math-content
 {
-  display: block;
   float: right;
   width: 80%;
-  height: 100%;
-  line-height: 120%;
+  line-height: 150%;
   padding: 0px 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   overflow-y: scroll;
 }
 
@@ -50,7 +54,7 @@
   font-weight: 400;
   color: black;
   height: 100%;
-  padding: 8px 10px;
+  padding: 4px 10px;
   border-left: 4px solid #dff8ea;
   -webkit-transition: border-left-color 0.3s;
   transition: border-left-color 0.3s;
@@ -59,4 +63,31 @@
 .math-links li a:hover, .math-links li a:active
 {
   border-left-color: #2ecc71;
+}
+
+.expand-topic
+{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sub-links
+{
+  display: none;
+  list-style: none;
+  margin: 0px 40px;
+  margin-right: 0;
+  overflow-y: hidden;
+}
+
+.sub-links li
+{
+  padding: 10px 0;
+  padding-bottom: 15px;
+  overflow-x: scroll;
+}
+
+.sub-links li a
+{
+  white-space: pre;
 }

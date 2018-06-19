@@ -5,6 +5,14 @@ $(document).ready(function() {
     $('.nav-mobile-buttons').animate({ top: newPos }, 500);
   });
 
+  // Expand topics in math section
+  $('.sub-links').off();
+  $('.expand-topic').on('click', function(event) {
+    event.preventDefault();
+    let toExpand = $(this).next();
+    toExpand.slideToggle(500);
+  });
+
   // Smooth scrolling
   $('a[href*="#"]')
   .not('[href="#"]')

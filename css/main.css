@@ -101,6 +101,16 @@ h3
   margin-bottom: 10px;
 }
 
+h4
+{
+  display: inline-block;
+  font-family: 'Oxygen';
+  font-weight: 900;
+  font-size: 100%;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
 p
 {
   line-height: 150%;
@@ -114,6 +124,7 @@ p
 nav
 {
   position: fixed;
+  top: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   width: 100vw;
@@ -263,7 +274,7 @@ header
 
 .project
 {
-  line-height: 145%;
+  line-height: 150%;
   margin-bottom: 40px;
 }
 
@@ -330,7 +341,7 @@ footer .darken
 
 .contact-info li
 {
-  line-height: 145%;
+  line-height: 150%;
   font-size: 90%;
 }
 
