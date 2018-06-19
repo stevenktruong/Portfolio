@@ -22,7 +22,7 @@ $(document).ready(function() {
       target = target.length ? target : $(`[name=${this.hash.slice(1)}]`);
       if (target.length) {
         event.preventDefault();
-        $('html, body').animate({ scrollTop: target.offset().top }, 1000)
+        $('html, body').animate({ scrollTop: target.offset().top - 60 }, 1000)
       }
     }
   });
