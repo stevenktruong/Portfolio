@@ -84,7 +84,7 @@
 {
   padding: 10px 0;
   padding-bottom: 15px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .sub-links li a
