@@ -12,6 +12,8 @@
     padding: 0px 10px;
   }
 
+  .math-nav { font-size: 100%; }
+
   .math-nav, .math-content
   {
     float: none;
