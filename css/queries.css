@@ -5,6 +5,20 @@
     width: 100%;
     padding: 0 4%;
   }
+
+  .skill-row { margin-bottom: 30px; }
+  .skill-row:first-of-type { margin-top: 0; }
+  .skill-row:last-of-type
+  {
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  .skill-col
+  {
+    width: 47.5%;
+    margin: 0 2.5%;
+  }
 }
 
 @media only screen and (max-width: 480px)
@@ -52,5 +66,29 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 0px;
+  }
+
+  .skill-row { margin: 0; }
+  .skill-row:first-child { margin: 0; }
+  .skill-row:last-child
+  { margin: 0; }
+
+  .skill-col
+  {
+    width: 100%;
+    margin: 50px auto;
+    float: none;
+  }
+
+  .skill-col:first-child
+  {
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .skill-col:last-child
+  {
+    padding-bottom: 0;
+    padding-left: 0;
   }
 }
