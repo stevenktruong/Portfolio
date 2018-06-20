@@ -1,8 +1,19 @@
 $(document).ready(function() {
   // Mobile menu button
+  let animated = false;
   $('.menu-button').on('click', () => {
-    let newPos = ($('.nav-mobile-buttons').css('top') === '60px') ? '-120px' : '60px';
-    $('.nav-mobile-buttons').animate({ top: newPos }, 500);
+    if (!animated) {
+      animated = true;
+      
+      // Toggle between X and three bars
+      $('.bottom-bar').toggleClass('rotate-bottom-bar');
+      $('.middle-bar').toggleClass('hide-middle-bar');
+      $('.top-bar').toggleClass('rotate-top-bar');
+
+      // Show menu
+      let newPos = ($('.nav-mobile-buttons').css('top') === '60px') ? '-120px' : '60px';
+      $('.nav-mobile-buttons').animate({ top: newPos }, 500, () => { animated = false });
+    }
   });
 
   // Expand topics in math section

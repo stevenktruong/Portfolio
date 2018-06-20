@@ -208,13 +208,52 @@ nav a
 
 .nav-mobile { display: none; }
 
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .menu-button
 {
   position: absolute;
-  font-size: 120%;
-  right: 0;
-  margin: 20px;
-  top: 0;
+  top: 15px;
+  right: 14px;
+  width: 25px;
+  padding: 2px;
+}
+
+.top-bar, .middle-bar, .bottom-bar
+{
+  height: 4px;
+  background-color: #000;
+  border-radius: 2px;
+  margin: 3px 0;
+  transition-duration: 0.5s;
+}
+
+.top-bar
+{
+  transform: rotate(0deg);
+}
+
+.rotate-top-bar
+{
+  transform-origin: top right;
+  transform: translate(-4px, 0) rotate(-45deg);
+}
+
+.hide-middle-bar
+{
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.rotate-bottom-bar
+{
+  transform-origin: bottom right;
+  transform: translate(-4px, 0) rotate(45deg);
 }
 
 .nav-mobile-buttons

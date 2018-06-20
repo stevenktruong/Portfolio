@@ -30,6 +30,7 @@
   .header-name:link, .header-name:visited
   {
     margin-left: 0px;
+    margin-top: 1px;
     border: 0;
   }
 
