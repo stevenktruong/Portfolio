@@ -12,7 +12,7 @@ $(document).ready(function() {
 
       // Show menu
       let newPos = ($('.nav-mobile-buttons').css('top') === '60px') ? '-120px' : '60px';
-      $('.nav-mobile-buttons').animate({ top: newPos }, 500, () => { animated = false });
+      $('.nav-mobile-buttons').animate({ top: newPos }, 500, function() { animated = false });
     }
   });
 
