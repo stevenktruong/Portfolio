@@ -212,7 +212,8 @@ nav a
 {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .menu-button
@@ -230,30 +231,38 @@ nav a
   background-color: #000;
   border-radius: 2px;
   margin: 3px 0;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .top-bar
 {
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .rotate-top-bar
 {
-  transform-origin: top right;
-  transform: translate(-4px, 0) rotate(-45deg);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transform: translate(-4px, 0) rotate(-45deg);
+          transform: translate(-4px, 0) rotate(-45deg);
 }
 
 .hide-middle-bar
 {
-  transform-origin: right;
-  transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }
 
 .rotate-bottom-bar
 {
-  transform-origin: bottom right;
-  transform: translate(-4px, 0) rotate(45deg);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: translate(-4px, 0) rotate(45deg);
+          transform: translate(-4px, 0) rotate(45deg);
 }
 
 .nav-mobile-buttons

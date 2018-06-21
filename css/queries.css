@@ -1,11 +1,13 @@
 @media only screen and (max-width: 1200px)
 {
+  /* ---- Setup ---- */
   .row
   {
     width: 100%;
     padding: 0 4%;
   }
 
+  /* ---- Skills ---- */
   .skill-row { margin-bottom: 30px; }
   .skill-row:first-of-type { margin-top: 0; }
   .skill-row:last-of-type
@@ -23,20 +25,11 @@
 
 @media only screen and (max-width: 480px)
 {
+  /* ---- Reused Components ---- */
   body { width: 100vw; }
   h1 { font-size: 200%; }
-  .nav-buttons { display: none; }
 
-  .header-name:link, .header-name:visited
-  {
-    margin-left: 0px;
-    margin-top: 1px;
-    border: 0;
-  }
-
-  .header-name:hover, .header-name:active { border: 0; }
-  .nav-mobile { display: block; }
-
+  /* ---- Bio ---- */
   .portrait
   {
     display: block;
@@ -46,6 +39,7 @@
     margin-bottom: 40px;
   }
 
+  /* ---- Projects ---- */
   .project a
   {
     text-decoration: none;
@@ -69,6 +63,7 @@
     margin-bottom: 0px;
   }
 
+  /* ---- Skills ---- */
   .skill-row { margin: 0; }
   .skill-row:first-child { margin: 0; }
   .skill-row:last-child
@@ -92,4 +87,17 @@
     padding-bottom: 0;
     padding-left: 0;
   }
+
+  /* ---- Mobile Nav ---- */
+  .nav-buttons { display: none; }
+
+  .header-name:link, .header-name:visited
+  {
+    margin-left: 0px;
+    margin-top: 1px;
+    border: 0;
+  }
+
+  .header-name:hover, .header-name:active { border: 0; }
+  .nav-mobile { display: block; }
 }
