@@ -19,6 +19,7 @@
     float: none;
     padding: 0px 20px;
     width: 100%;
+    overflow-x: scroll;
   }
 
   .math-nav
@@ -27,4 +28,13 @@
     padding-top: 100px;
     padding-bottom: 20px;
   }
+
+  p { margin: 10px 0; }
+
+  ol, .algorithm { padding: 20px 40px; }
+
+  li { font-size: 12pt; }
+
+  #neural-network-1 { width: 100% }
+  #neural-network-2 { width: 100% }
 }

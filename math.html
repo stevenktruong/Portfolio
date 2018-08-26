@@ -18,6 +18,12 @@
     
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        messageStyle: "none",
+        "HTML-CSS": { linebreaks: { automatic: true, width: "container" } }
+      });
+    </script>
     <script type="text/javascript">
       // Load MathJax
       window.MathJax = {
@@ -27,13 +33,8 @@
         }
       };
     </script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        messageStyle: "none"
-      });
-    </script>
     <script src="resources/js/main.js"></script>
-    <script type="text/javascript" src="resources/js/mathText.js"></script>
+    <script type="text/javascript" src="resources/js/math-info.js"></script>
     <script src="resources/js/math.js"></script>
   </head>
 
@@ -70,11 +71,8 @@
         </div>
         <div class="math-content">
           <h3>Home</h3>
-          <p>
-            This section is a work in progress.
-  
-            $$e^{i\pi} + 1 = 0.$$
-          </p>
+          $$e^{i\pi} + 1 = 0.$$
+          <p>The math part of my website is basically a math blog. I'll write articles about things I think are interesting or things that I want to say.</p>
         </div>
       </div>
     </section>

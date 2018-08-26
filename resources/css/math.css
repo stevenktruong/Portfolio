@@ -11,7 +11,7 @@
 .math-main .row
 {
   padding: 100px 10px;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
   height: 100%;
 }
 
@@ -32,6 +32,7 @@
 {
   float: right;
   width: 80%;
+  font-size: 12pt;
   line-height: 150%;
   padding: 0px 20px;
   padding-bottom: 40px;
@@ -82,3 +83,24 @@
 }
 
 .sub-links li:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- */
+/* Styling miscellaneous stuff */
+/* ---------------------------------------------------------------- */
+
+p
+{
+  margin: 10px 0;
+  font-size: 12pt;
+}
+
+ol, .algorithm { padding: 20px 40px; }
+
+img
+{
+  margin: 20px auto;
+  display: block;
+}
+
+#neural-network-1 { width: 50% }
+#neural-network-2 { width: 20% }
