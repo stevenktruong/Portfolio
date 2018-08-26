@@ -143,7 +143,7 @@
           <p>This is the quantity that we want to maximize. Since $\log(\cdot)$ is strictly increasing, maximizing $P(D \mid W)$ is the same as maximizing $\log{P(D \mid W)}$, which is the same as minimizing $-\log{P(D \mid W)}$. Thus, our optimization problem is equivalent to</p>
             \begin{align*}
               &\min_W -\log{P(D \mid W)} \\
-              ={}&\min_W \sum_{n=1}^N \sum_{i=1}^k t_{ni}\log{y_{ni}}.
+              ={}&\min_W -\sum_{n=1}^N \sum_{i=1}^k t_{ni}\log{y_{ni}}.
             \end{align*}
           <p>We'll define</p>
             \[
