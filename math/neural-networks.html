@@ -193,7 +193,7 @@
             \]
           <p>The quantities are related by the following equation:</p>
             \[
-              \mathbf{z}^{\ell}_j = \sum_i W^{\ell}_{ji}\mathbf{a}^{\ell-1}_i + \mathbf{b}^{\ell}_j.
+              \mathbf{z}^{\ell}_j = \sum_i W^{\ell}_{ji}\mathbf{a}^{\ell-1}_i + \mathbf{b}^{\ell}_j,
             \]
           <p>so taking the derivative with respect to $W^{\ell}_{ji}$ and $\mathbf{b}^\ell_j$, we get</p>
             \[
@@ -288,6 +288,7 @@
             <li>Perform gradient descent with $W_{\text{new}} = W_{\text{old}} - \eta\nabla E_n(W_{\text{old}})$</li>
           </ol>
           <p>The math is pretty involved, but at the end of the day, backpropagation is just the chain rule.</p>
+          <p>After enough training, we can classify points by sending them through the neural net, and picking the component with the largest number. From a probability viewpoint, the neural network calculates the probability a point is in a particular class for each class, so we naturally pick the class with the largest probability for classification.</p>
           <p>In summary, neural networks are used to approximate functions, and the approximations are improved (i.e., the neural network learns) by maximizing the probability that our training data is classified correctly. Maximizing that probability took up the bulk of this article because backpropagation required a lot of calculation. However, the equations we get in the end are relatively simple and easy to implement.</p>
         </div>
       </div>
