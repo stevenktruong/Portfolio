@@ -112,7 +112,7 @@
             \]
           <p>where the sum is over the components of $\mathbf{z}$. In other words, the $j$-th component of the result vector $s(\mathbf{z})$ is given by the formula above. You can easily verify that each component of $s(\mathbf{z})$ is positive, and that adding together all of its components of gives you $1$, which allows us to interpret $s(\mathbf{z})_j$ as the probability that $\mathbf{z}$ is in class $j$.</p>
           <p>From now on, whenever we say our neural network has $r$ layers, it will actually have $r+1$ layers, with the last layer being the softmax layer. However, training will only be done on the first $r$ layers.</p>
-          <p>Let's say we have some training data $D = \{\mathbf{x}_1, \ldots, \mathbf{x}_N\} \subseteq \mathbb{R}^d$ (i.e., $N$ pieces of data, all of which are $d$-dimensional), $k$ classes given by $C_1$, $C_2$, \ldots, and $C_k$, and an $r$-layer neural network</p>
+          <p>Let's say we have some training data $D = \{\mathbf{x}_1, \ldots, \mathbf{x}_N\} \subseteq \mathbb{R}^d$ (i.e., $N$ pieces of data, all of which are $d$-dimensional), $k$ classes given by $C_1$, $C_2$, $\ldots$, and $C_k$, and an $r$-layer neural network</p>
             \[
               \varphi(\mathbf{x}) = s(\varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots)))).
             \]
