@@ -165,6 +165,7 @@
           </div>
           <p>Every $N$ iterations of SGD is called an <b>epoch</b> and the step size $\eta$ is called the <b>learning rate</b>.</p>
           <p>In other words, we perform gradient descent on the energy function associated with a randomly chosen training point until the algorithm "converges." We don't actual expect the process to ever converge, but after many epochs, we still expect the neural network to perform well.</p>
+          <p>The next section describes how (in gory detail) to derive the formulas needed to do gradient descent. If you're not interested in the calculations, you can just skip to the bottom and see the results.</p>
           <p>The last thing we need to do is figure out how to calculate $\nabla E_n$. In other words, we need to calculate the partial derivatives</p>
             \[
               \frac{\partial E_n}{\partial W^\ell_{ij}} \quad\text{and}\quad \frac{\partial E_n}{\partial \mathbf{b}^\ell_j}
