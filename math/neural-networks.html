@@ -74,8 +74,8 @@
           <p>This article will explain how a basic, fully connected, feed forward neural network works. In particular, we'll be looking at how to build a classifier using a neural network.</p>
           <p>The first thing we need to do is define the relevant terms and how they relate.</p>
 	        <p>Let's say our data is $d$-dimensional and we have $k$ classes. Then a <b>classifier</b> is a function $f\colon\mathbb{R}^d\to\mathbb{R}^k$, i.e., a function that maps a point of data to a $k$-dimensional vector, which we'll use to directly classify that point.</p>
-          <p>A perfect classifier is almost always impossible to find explicitly because the objects we want to classify are usually very complicated and high-dimensional, e.g., we may want to distinguish pictures of dogs from pictures of planes. This is where neural networks come in.</p>
-	        <p>A neural network is used to <i>approximate</i> functions, and it turns out that we can approximate most functions very well using neural networks (<a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem" target="_blank">under mild assumptions, we can approximate most functions arbitrarily well</a>). Since we want to approximate the classifier described above, our neural network will be also be a function from $\mathbb{R}^d$ to $\mathbb{R}^k$.</p>
+          <p>There exists a classifier that classifies just about every point correctly. However, it's almost always impossible to find it explicitly because the objects we want to classify are usually very complicated and high-dimensional, e.g., we may want to distinguish pictures of dogs from pictures of planes, where the number of dimensions is the number of pixels (pictures nowadays can have millions of pixels!). This is where neural networks come in.</p>
+	        <p>A neural network is used to <i>approximate</i> functions, and it turns out that we can approximate most functions very well using neural networks (<a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem" target="_blank">under mild assumptions, we can approximate most functions <i>arbitrarily</i> well</a>). When using a neural network for classification, what we're really doing is approximating the classifier mentioned above, so when we train the network, it's "learning" the classifier function.</p>
           <p>One of the most simple neural network architectures is as the function $\varphi\colon\mathbb{R}^d\to\mathbb{R}^k$,
             \[
               \varphi(\mathbf{x}) = \varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots))).
@@ -182,7 +182,7 @@
               \mathbf{z}^{\ell+1} &= W^{\ell+1}\mathbf{a}^\ell + \mathbf{b}^{\ell+1},
             \end{align*}
           <p>where $\sigma$ is the activation function, as mentioned earlier.</p>
-          <p>For example, $\mathbf{z}^2$ is the output of the second layer, and $\mathbf{a}^2$ is the activated neuron after entering the third layer. In general, $\mathbf{z}^\ell$ is the output of the $\ell$-th layer before activation, and $\mathbf{a}^\ell$ is the activated neuron after entering the $\ell+1$-th layer.</p>
+          <p>For example, $\mathbf{z}^2$ is the output of the second layer, and $\mathbf{a}^2$ is the activation of that output after entering the third layer. In general, $\mathbf{z}^\ell$ is the output of the $\ell$-th layer before activation, and $\mathbf{a}^\ell$ is the activated input after entering the $\ell+1$-th layer.</p>
           <img id="neural-network-1" src="../resources/img/neural-network-1.png">
           <p>Looking at the above, the only quantities that are associated with $W_{ji}^\ell$ and $\mathbf{b}^\ell_j$ are $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^{\ell}_j$. This is because the $j$-th component of $\mathbf{z}^\ell$ comes from the $j$-th row of $W^\ell$ and the $i$-th component of $\mathbf{z}^{\ell-1}$ when doing matrix multiplication. Using the single variable chain rule,</p>
             \[
@@ -234,7 +234,7 @@
               \frac{\partial E_n}{\partial \mathbf{b}^\ell_j} &= \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} \frac{\partial \mathbf{z}^\ell_j}{\partial \mathbf{b}^\ell_j} = \delta_j^\ell \\
               \delta^\ell_j &= \sum_i \delta^{\ell+1}_iW^{\ell+1}_{ij}\sigma'{(\mathbf{z}^\ell_j)}.
             \end{align*}
-          <p>We have access to all the activated neurons $\mathbf{a}^{\ell-1}_i$ and the weights $W^\ell_{ji}$, and we can calculate $\delta_j^\ell$ if we know the values of $\delta$ for the next layer (this is why it's called backpropagation; the $\delta$'s "propagate" from the end to the beginning). So, if we can calculate $\delta_j^{r+1}$ (i.e., the $\delta$'s after the final layer), we can calculate the gradient and perform gradient descent.</p>
+          <p>We have access to all the activated values $\mathbf{a}^{\ell-1}_i$ and the weights $W^\ell_{ji}$, and we can calculate $\delta_j^\ell$ if we know the values of $\delta$ for the next layer (this is why it's called backpropagation; the $\delta$'s "propagate" from the end to the beginning). So, if we can calculate $\delta_j^{r+1}$ (i.e., the $\delta$'s after the final layer), we can calculate the gradient and perform gradient descent.</p>
           <p>Recall that</p>
             \begin{align*}
               E_n(W) &= \sum_{i=1}^k t_{ni}\log{y_{ni}} \\
