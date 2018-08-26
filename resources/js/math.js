@@ -9,7 +9,7 @@ $(document).ready(function() {
             (function() {
               let topicsString = "";
               for (let j = 0; j < mathInfo[i].topics.length; j++) {
-                topicsString += `<li><a href="math/${mathInfo[i].topics[j].page}.html" class="change-topic" data-subject="${i}" data-topic="${j}">${mathInfo[i].topics[j].title}</a></li>`;
+                topicsString += `<li><a href="../math/${mathInfo[i].topics[j].page}.html" class="change-topic" data-subject="${i}" data-topic="${j}">${mathInfo[i].topics[j].title}</a></li>`;
               }
               return topicsString;
             })() + `
