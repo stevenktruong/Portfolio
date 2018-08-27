@@ -29,11 +29,7 @@
     padding-bottom: 20px;
   }
 
-  p { margin: 10px 0; }
-
-  ol, .algorithm { padding: 20px 40px; }
-
-  li { font-size: 12pt; }
+  ol, .algorithm { margin: 20px 20px; }
 
   #neural-network-1 { width: 100% }
   #neural-network-2 { width: 100% }

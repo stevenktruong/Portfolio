@@ -94,7 +94,7 @@ p
   font-size: 12pt;
 }
 
-ol, .algorithm { padding: 20px 40px; }
+ol, .algorithm { margin: 20px 40px; }
 
 img
 {
