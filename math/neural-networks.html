@@ -136,7 +136,7 @@
               P(\mathbf{x}_n \in C_j \mid W) = \prod_{i=1}^k P(\mathbf{x}_n \in C_i \mid W)^{t_{ni}} = \prod_{i=1}^k y_{ni}^{t_{ni}}.
             \]
           <p>This is true since we will end up multiplying $P(\mathbf{x}_n \in C_j)$ by a bunch of $1$'s.</p>
-          <p>Each data point is also classified independently of the one before it, so the probability that the entire data set is classified correctly is given by</p>
+          <p>Each data point is also classified independently of the one before it, so the probability that the entire data set is classified correctly is just the product of every probability, which is given by</p>
             \[
               P(D \mid W) = \prod_{n=1}^N \prod_{i=1}^k y_{ni}^{t_{ni}}.
             \]
