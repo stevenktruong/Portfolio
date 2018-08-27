@@ -126,7 +126,7 @@
                 0 & \text{otherwise}.
               \end{cases}
             \]
-          <p>In other words, $t_{nj}$ simply keeps track of what class each data is in.</p>
+          <p>To put it simply, $t_{nj}$ keeps track of what class each data point is in.</p>
           <p>The probability that $\mathbf{x}_n$ is classified correctly given our weights $W$ is then</p>
             \[
               P(\mathbf{x}_n \in C_j \mid W) = \varphi(\mathbf{x})_j \overset{\text{def}}{=} y_{nj}.
@@ -166,11 +166,11 @@
           <p>Every $N$ iterations of SGD is called an <b>epoch</b> and the step size $\eta$ is called the <b>learning rate</b>.</p>
           <p>In other words, we perform gradient descent on the energy function associated with a randomly chosen training point until the algorithm "converges." We don't actual expect the process to ever converge, but after many epochs, we still expect the neural network to perform well.</p>
           <p>The next section describes how (in gory detail) to derive the formulas needed to do gradient descent. If you're not interested in the calculations, you can just skip to the bottom and see the results.</p>
-          <p>The last thing we need to do is figure out how to calculate $\nabla E_n$. In other words, we need to calculate the partial derivatives</p>
+          <p>The last thing we need to do is figure out how to calculate $\nabla E_n$, which means we need to calculate the partial derivatives</p>
             \[
               \frac{\partial E_n}{\partial W^\ell_{ij}} \quad\text{and}\quad \frac{\partial E_n}{\partial \mathbf{b}^\ell_j}
             \]
-          <p>for every layer $\ell$ and every weight, indexed by $i$ and $j$. Looking at the neural network</p>
+          <p>for every layer $\ell$ and every weight. Looking at the neural network</p>
             \[
               \varphi(\mathbf{x}) = s(\varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots))))
             \]
@@ -184,7 +184,9 @@
           <p>where $\sigma$ is the activation function, as mentioned earlier.</p>
           <p>For example, $\mathbf{z}^2$ is the output of the second layer, and $\mathbf{a}^2$ is the activation of that output after entering the third layer. In general, $\mathbf{z}^\ell$ is the output of the $\ell$-th layer before activation, and $\mathbf{a}^\ell$ is the activated input after entering the $\ell+1$-th layer.</p>
           <img id="neural-network-1" src="../resources/img/neural-network-1.png">
-          <p>Looking at the above, the only quantities that are associated with $W_{ji}^\ell$ and $\mathbf{b}^\ell_j$ are $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^{\ell}_j$. This is because the $j$-th component of $\mathbf{z}^\ell$ comes from the $j$-th row of $W^\ell$ and the $i$-th component of $\mathbf{z}^{\ell-1}$ when doing matrix multiplication. Using the single variable chain rule,</p>
+          <p>On the left are the components of the vector $\mathbf{z}^{\ell-1}$ (each component is called a <b>neuron</b>), and on the right are the components of $\mathbf{z}^\ell$. Each neuron on the left is connected to the right via a weight and a bias for each component. There's an activation involved, but for simplicity, we'll keep it out of the diagram.</p>
+          <p>To see why $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^\ell_j$ are connected by $W^\ell_{ji}$ and $\mathbf{b}^\ell_j$, we just need to think about matrix multiplication. The $j$-th component of $\mathbf{z}^\ell$ comes from a linear combination of the $j$-th row of $W^\ell$, which is why the first index is $j$. When we apply $W^\ell_{ji}$ to $\sigma{(\mathbf{z}^{\ell-1})}$, only the $i$-th column of $W^\ell_{ji}$ interacts with the vector, so the second index is $i$. Additionally, because of vector addition, only the $j$-th component of $\mathbf{b}^\ell$ contributes to the $j$-th component of $\mathbf{z}^\ell_j$, so the connection can be visualized by the above.</p>
+          <p>The only quantities that are associated with $W_{ji}^\ell$ and $\mathbf{b}^\ell_j$ are $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^{\ell}_j$. Using the single variable chain rule,</p>
             \[
               \frac{\partial E_n}{\partial W^\ell_{ji}} = \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} \frac{\partial \mathbf{z}^\ell_j}{\partial W^\ell_{ji}}.
             \]
