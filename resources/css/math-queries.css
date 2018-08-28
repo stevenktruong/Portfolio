@@ -24,6 +24,7 @@
 
   .math-nav
   {
+    position: relative;
     padding: 0px 20px;
     padding-top: 100px;
     padding-bottom: 20px;

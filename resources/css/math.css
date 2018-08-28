@@ -5,7 +5,7 @@
 .math-main
 {
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .math-main .row
@@ -23,6 +23,7 @@
 
 .math-nav
 {
+  position: fixed;
   float: left;
   margin-top: 4px;
   width: 20%;
