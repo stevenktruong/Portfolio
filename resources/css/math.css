@@ -15,11 +15,7 @@
   height: 100%;
 }
 
-.math-nav, .math-content
-{
-  display: block;
-  height: 100%;
-}
+.math-nav, .math-content { display: block; }
 
 .math-nav
 {
