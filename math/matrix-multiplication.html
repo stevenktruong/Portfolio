@@ -154,6 +154,7 @@
               \end{pmatrix}\begin{pmatrix}4\\0\\2\end{pmatrix}
             \]
           <p>If we think of it as a linear combination of the columns of the matrix, then the calculation is quick: It's $4 \times (\text{column 1}) + 2 \times (\text{column 3})$, which gives you $\begin{pmatrix}4&12&14\end{pmatrix}^\top$ right away.</p>
+          <p>Seeing matrix multiplication in this light should also help you see why dimensions matter when multiplying things together. If your vector is too short (or too big), then you end up with not enough coefficients (or too many), and the linear combination becomes nonsense. It should be easy to see that your vector should have as many coordinates as the matrix has columns.</p>
           <p>Now that we've gotten this far, I should admit that I've been cheating a little&mdash;I still haven't shown you how (non-vector) matrix multiplication works exactly.</p>
           <p>Ignoring dimensions for now, if $A$ represents the linear transformation $T$ and $B$ represents the linear transformation $S$, then $AB$ represents $T \circ S$, i.e., $T$ composed with $S$. In simpler terms, you apply $S$ and then $T$ right after.</p>
           <p>Intuitively, this makes sense because matrix multiplication is applying a linear map. When you calculate $AB\mathbf{x}$, you do the following things:</p>
@@ -188,7 +189,7 @@
                       \vert & \vert & & \vert
                     \end{pmatrix}
             \]
-          <p>In other words, matrix multiplication is exactly the same thing as applying a matrix to a vector, so it's actually no different than what we've been doing this whole time.</p>
+          <p>In other words, matrix multiplication is exactly the same thing as applying a matrix to a vector, so it's actually no different than what we've been doing this whole time. So, the same rule about dimensionality applies: each column of $B$ should have as many coordinates as $A$ has columns, which is why $B$ needs to have as many rows (coordinates) and $A$ has columns.</p>
           <p>As you can see, matrix multiplication is centered around the columns of a matrix; the algorithms that you had to memorize in the past hid that fact from you. Once you become more comfortable thinking of matrix multiplication as just linear combinations based on some basis vectors, many linear algebra concepts become a lot more intuitive.</p>
           <p>For example, the range of a matrix is simply all the possible linear combinations of its column vectors&mdash;this fact is much more clear once you understand the motivation behind matrix multiplication.</p>
           <p>Hopefully, you will be able abstract away from the matrix multiplication algorithm and build greater intuition for the roles of matrices in linear algebra and other disciplines.</p>
