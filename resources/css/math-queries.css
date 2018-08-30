@@ -30,7 +30,9 @@
     padding-bottom: 20px;
   }
 
-  ol, .algorithm { margin: 20px 20px; }
+  .footnote::before { width: 100% }
+
+  ol, .algorithm { margin: 20px 20px }
 
   #neural-network-1 { width: 100% }
   #neural-network-2 { width: 100% }
