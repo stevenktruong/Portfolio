@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>Steven Truong</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/png" href="../resources/img/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
+    <link href="../resources/css/normalize.css" rel="stylesheet">
+    <link href="../resources/css/main.css" rel="stylesheet">
+    <link href="../resources/css/queries.css" rel="stylesheet">
+    <link href="../resources/css/math.css" rel="stylesheet">
+    <link href="../resources/css/math-queries.css" rel="stylesheet">
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        messageStyle: "none",
+        "HTML-CSS": { linebreaks: { automatic: true, width: "container" } }
+      });
+    </script>
+    <script type="text/javascript">
+      // Load MathJax
+      window.MathJax = {
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      };
+    </script>
+    <script src="../resources/js/main.js"></script>
+    <script type="text/javascript" src="../resources/js/math-info.js"></script>
+    <script src="../resources/js/math.js"></script>
+  </head>
+
+  <body id="main">
+    <nav>
+      <a href="../index.html" class="header-name">ST</a>
+      <div class="nav-desktop">
+        <ul class="nav-buttons">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="../files/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#main">Math</a></li>
+        </ul> 
+      </div>
+      <div class="nav-mobile clearfix">
+        <div class="menu-button">
+          <div class="top-bar"></div>
+          <div class="middle-bar"></div>
+          <div class="bottom-bar"></div>
+        </div>
+        <ul class="nav-mobile-buttons">
+          <li><a href="#main">Math</a></li>
+          <li><a href="../files/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul> 
+      </div>
+    </nav>
+
+    <section class="math-main clearfix">
+      <div class="row">
+        <div class="math-nav">
+          <ul class="math-links">
+            <li><a href="../math.html" class="expand-topics change-topic">Home</a></li>
+          </ul>
+        </div>
+        <div class="math-content">
+          <h3>Matrix Multiplication</h3>
+          <p>One of the very first things that students learn about matrices is how to multiply them together. However, they're only taught the horrible algorithm and are told to memorize it&mdash;not fun at all! The algorithm may seem very complicated, but it's based on very simple principles that are easy to understand and remember.</p>
+          <p>The very first thing we need to understand is that a matrix represents a linear transformation. For the sake of intuition, we'll only consider Euclidean space, $\mathbb{R}^n$, i.e., vectors with $n$ coordinates.</p>
+          <p>If you don't remember, a linear map $T\colon\mathbb{R}^n\to\mathbb{R}^m$ satisfies the following two properties, where $\mathbf{x}$, $\mathbf{y} \in \mathbb{R}^n$ and $\alpha$ is a scalar:</p>
+            \begin{align*}
+              T(\mathbf{x} + \mathbf{y}) &= T(\mathbf{x}) + T(\mathbf{y}) \\
+              T(\alpha\mathbf{x}) &= \alpha T(\mathbf{x}). \\
+            \end{align*}
+          <p>These are key properties that we will be exploiting later on.</p>
+          <p>Here is the main idea: If $\mathbf{x} = \begin{pmatrix}x_1&x_2&x_3&\cdots&x_n\end{pmatrix}^\top$, then we can write $\mathbf{x}$ as</p>
+            \[
+              \mathbf{x} = \begin{pmatrix}x_1\\x_2\\x_3\\\vdots\\x_n\end{pmatrix} = x_1\begin{pmatrix}1\\0\\0\\\vdots\\0\end{pmatrix} + x_2\begin{pmatrix}0\\1\\0\\\vdots\\0\end{pmatrix} + x_3\begin{pmatrix}0\\0\\1\\\vdots\\0\end{pmatrix} + \cdots + x_n\begin{pmatrix}0\\0\\0\\\vdots\\1\end{pmatrix}.
+            \]
+          <p>For simplicity, we're going to let $\mathbf{e}_j$ be the vector with all $0$'s except for a $1$ in the $j$-th coordinate. For example, $\mathbf{e}_2$ would be</p>
+            \[
+              \mathbf{e}_2 = \begin{pmatrix}0\\1\\0\\0\\\vdots\\0\end{pmatrix}.
+            \]
+          <p>Thus, if we apply a linear transformation $T$ to $\mathbf{x}$, we can express it the following way by using the properties of a linear map:</p>
+            \[
+              T(\mathbf{x}) = T\begin{pmatrix}x_1\\x_2\\x_3\\\vdots\\x_n\end{pmatrix} = x_1T(\mathbf{e}_1) + x_2T(\mathbf{e}_2) + x_3T(\mathbf{e}_3) + \cdots + x_nT(\mathbf{e}_n).
+            \]
+          <p>If you look closely, all we really need to know from the linear map in order to calculate $T(\mathbf{x})$ are $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, etc., i.e., the image of the canonical basis vectors under $T$. Once we have those, then calculating $T(\mathbf{x})$ is just forming a linear combination of the image vectors. If we know what happens to the basis vectors under $T$, then we know what happens to <i>every</i> vector under the map $T$. This means that to understand what a linear map actually does (e.g., rotation, scaling, skewing, etc.), we only need to look at what it does to the basis vectors to find out.</p>
+          <p>Now, we're ready to see what matrix multiplication is based on. If the $m \times n$ matrix $A$ represents the linear transformation $T$ (in other words, $A\mathbf{x} = T(\mathbf{x})$ for every single vector $\mathbf{x}$), then we want two things from matrix multiplication and $A$:</p>
+          <ol>
+            <li>$A$ keeps track of the images of every single basis vector, i.e., $A$ keeps track of $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, etc.</li>
+            <li>Multiplying $A$ with $\mathbf{e}_j$ gives $T(\mathbf{e}_j)$ for every basis vector $\mathbf{e}_j$.</li>
+          </ol>
+          <p>If we get (1), then it becomes easy to see what happens to the basis vectors under $T$. If we get (2), then $A$ will map every vector correctly.</p>
+          <p>Mathematicians like to keep things simple, so if we want $A$ to keep track of $T(\mathbf{e}_j)$ for all the basis vectors, we'll just keep them as columns in $A$. So, we get</p>
+            \[
+              A = \begin{pmatrix}
+                    \vert & \vert & & \vert \\
+                    T(\mathbf{e}_1) & T(\mathbf{e}_2) & \cdots & T(\mathbf{e}_n)\\
+                    \vert & \vert & & \vert
+                  \end{pmatrix}.
+            \]
+          <p>We now have (1) covered&mdash;$A$ keeps track of the images. Next, we want to define matrix multiplication so that $\mathbf{e}_j$ gets sent to the right vector. For example, we want</p>
+            \[
+              A\mathbf{e}_1 =
+                  \begin{pmatrix}
+                    \vert & \vert & & \vert \\
+                    T(\mathbf{e}_1) & T(\mathbf{e}_2) & \cdots & T(\mathbf{e}_n) \\
+                    \vert & \vert & & \vert
+                  \end{pmatrix}
+                  \begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix} = T(\mathbf{e}_1).
+            \]
+          <p>A pattern should become obvious from here. Multiplying $A$ by $\mathbf{e}_1$ gives the first column, so in general, if we perform the product $A\mathbf{e}_j$, we want to get the $j$-th column from $A$, and that is the heart of matrix multiplication. Instead of breaking down matrix multiplication as some weird sum and product between rows and columns, we should think of everything in terms of column vectors.</p>
+          <p>To reinforce this idea, I'll say it again: Matrix multiplication is defined so that $A\mathbf{e}_j$ gives us the $j$-th column of a matrix $A$. If</p>
+          \[
+            A =
+            \begin{pmatrix}
+              \vert & \vert & & \vert \\
+              \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \\
+              \vert & \vert & & \vert
+            \end{pmatrix},
+          \]
+          <p>then $A\mathbf{e}_j = \mathbf{v}_j$, which is the $j$-th column of $A$. This is how matrix multiplication is <i>defined.</i></p>
+          <p>Combine this with the fact that linear maps are linear, and we will have a much nicer way of understanding matrix multiplication:</p>
+            \begin{align*}
+              A\mathbf{x}
+              &= A\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix} \\
+              &= A\left(x_1\mathbf{e}_1 + x_2\mathbf{e}_2 + \cdots + x_n\mathbf{e}_n\right) \\
+              &= x_1A\mathbf{e}_1 + x_2A\mathbf{e}_2 + \cdots + x_nA\mathbf{e}_n \\
+              &= x_1\mathbf{v}_1 + x_2\mathbf{v}_2 + \cdots + x_n\mathbf{v}_n.
+            \end{align*}
+          <p>Now we finally start to see the big picture of matrix multiplication: Whenever we calculate $A\mathbf{x}$, we're forming a linear combination of the columns of $A$, and the coefficients of the linear combination are the coordinates of $\mathbf{x}$.</p>
+          <p>Here is a good place to illustrate with a concrete example. Consider the following product:</p>
+            \[
+              \begin{pmatrix}
+                2 & 0 & 4 \\
+                1 & 4 & 8 \\
+                0 & 9 & 7
+              \end{pmatrix}\begin{pmatrix}0\\2\\0\end{pmatrix}
+            \]
+          <p>Based on what we've seen, the answer should come quickly: It's just $2 \times (\text{column 2})$, which is $\begin{pmatrix}0&8&18\end{pmatrix}^\top$. This is a much faster and intuitive way to look at matrix multiplication, rather than thinking of it as some arbitrary algorithm. You can confirm for yourself that this gives the same result as performing the algorithm you know <s>and love.</s> If you really sit down and think about it, the algorithm does indeed use linear combinations, but the algorithm makes you form them for each row instead of as a linear combination of the columns as a whole.</p>
+          <p>Here's another example:</p>
+            \[
+              \begin{pmatrix}
+                1 & 9 & 0 \\
+                3 & 8 & 0 \\
+                0 & 2 & 7
+              \end{pmatrix}\begin{pmatrix}4\\0\\2\end{pmatrix}
+            \]
+          <p>If we think of it as a linear combination of the columns of the matrix, then the calculation is quick: It's $4 \times (\text{column 1}) + 2 \times (\text{column 3})$, which gives you $\begin{pmatrix}4&12&14\end{pmatrix}^\top$ right away.</p>
+          <p>Now that we've gotten this far, I should admit that I've been cheating a little&mdash;I still haven't shown you how (non-vector) matrix multiplication works exactly.</p>
+          <p>Ignoring dimensions for now, if $A$ represents the linear transformation $T$ and $B$ represents the linear transformation $S$, then $AB$ represents $T \circ S$, i.e., $T$ composed with $S$. In simpler terms, you apply $S$ and then $T$ right after.</p>
+          <p>Intuitively, this makes sense because matrix multiplication is applying a linear map. When you calculate $AB\mathbf{x}$, you do the following things:</p>
+          <ol>
+            <li>Calculate $B\mathbf{x}$, which is applying $S$ to $\mathbf{x}$ to get $S(\mathbf{x})$</li>
+            <li>Multiply the result by $A$, which is the same as applying $T$ to $S(\mathbf{x})$, which gives you $T(S(\mathbf{x}))$</li>
+          </ol>
+          <p>So, it should be clear that matrix multiplication is exactly the same as composing two linear maps, i.e., applying linear maps one after another. To figure out what $AB$ is, we need to find the matrix for the map $T \circ S$, since $AB$ represents it. To find that matrix, we only need to see what happens to the basis vectors $\mathbf{e}_j$ when we apply $T \circ S$ to it, and this also gives us the $j$-th column of $AB$. Everything's coming together!</p>
+          <p>I'll let</p>
+            \[
+              B = \begin{pmatrix}
+                    \vert & \vert & & \vert \\
+                    \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \\
+                    \vert & \vert & & \vert
+                  \end{pmatrix}.
+            \]
+          <p>Now we're ready to see what happens when we apply $AB$ to $\mathbf{e}_j$. For simplicity, we'll just look at what happens to $\mathbf{e}_1$&mdash;the rest will be exactly the same.</p>
+            \begin{align*}
+              AB\mathbf{e}_1
+              &= A  \begin{pmatrix}
+                      \vert & \vert & & \vert \\
+                      \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \\
+                      \vert & \vert & & \vert
+                    \end{pmatrix}\mathbf{e}_1 \\
+              &= A\mathbf{v}_1
+            \end{align*}
+          <p>This tells us that the first column of $AB$ must be $A\mathbf{v}_1$. You can guess what the other columns must be:</p>
+            \[
+              AB =  \begin{pmatrix}
+                      \vert & \vert & & \vert \\
+                      A\mathbf{v}_1 & A\mathbf{v}_2 & \cdots & A\mathbf{v}_n \\
+                      \vert & \vert & & \vert
+                    \end{pmatrix}
+            \]
+          <p>In other words, matrix multiplication is exactly the same thing as applying a matrix to a vector, so it's actually no different than what we've been doing this whole time.</p>
+          <p>As you can see, matrix multiplication is centered around the columns of a matrix; the algorithms that you had to memorize in the past hid that fact from you. Once you become more comfortable thinking of matrix multiplication as just linear combinations based on some basis vectors, many linear algebra concepts become a lot more intuitive.</p>
+          <p>For example, the range of a matrix is simply all the possible linear combinations of its column vectors&mdash;this fact is much more clear once you understand the motivation behind matrix multiplication.</p>
+          <p>Hopefully, you will be able abstract away from the matrix multiplication algorithm and build greater intuition for the roles of matrices in linear algebra and other disciplines.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="darken">
+        <div class="row">
+          <h2>Contact Me</h2>
+          <ul class="contact-info">
+            <li><i class="fas fa-envelope icon-small"></i><a href="mailto:steventruong@g.ucla.edu">steventruong@g.ucla.edu</a></li>
+            <li><i class="fab fa-github icon-small"></i><a href="https://github.com/stevenktruong" target="_blank">stevenktruong</a></li>
+            <li><i class="fab fa-linkedin icon-small"></i><a href="https://www.linkedin.com/in/steven-t-180126109/" target="_blank">Steven Truong</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

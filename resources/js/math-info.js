@@ -15,4 +15,13 @@ const mathInfo = [
       }
     ]
   },
+  {
+    title: "Linear Algebra",
+    topics: [
+      {
+        title: "Matrix Multiplication",
+        page: "matrix-multiplication"
+      }
+    ]
+  }
 ]
