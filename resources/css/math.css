@@ -91,6 +91,22 @@ p
   font-size: 12pt;
 }
 
+.footnote
+{
+  font-size: 9pt;
+  color: gray;
+}
+
+.footnote::before
+{
+  display: block;
+  content: "";
+  width: 25%;
+  height: 4px;
+  border-top: 1px solid gray;
+  margin-top: 20px;
+}
+
 ol, .algorithm { margin: 20px 40px; }
 
 img

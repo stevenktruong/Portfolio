@@ -7,20 +7,20 @@ const homeText = `
 
 const mathInfo = [
   {
-    title: "Machine Learning",
-    topics: [
-      {
-        title: "Neural Networks",
-        page: "neural-networks"
-      }
-    ]
-  },
-  {
     title: "Linear Algebra",
     topics: [
       {
         title: "Matrix Multiplication",
         page: "matrix-multiplication"
+      }
+    ]
+  },
+  {
+    title: "Machine Learning",
+    topics: [
+      {
+        title: "Neural Networks",
+        page: "neural-networks"
       }
     ]
   }
