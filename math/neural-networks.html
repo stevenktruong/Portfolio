@@ -77,18 +77,24 @@
           <p>There exists a classifier that classifies just about every point correctly. However, it's almost always impossible to find it explicitly because the objects we want to classify are usually very complicated and high-dimensional, e.g., we may want to distinguish pictures of dogs from pictures of planes, where the number of dimensions is the number of pixels (pictures nowadays can have millions of pixels!). This is where neural networks come in.</p>
 	        <p>A neural network is used to <i>approximate</i> functions, and it turns out that we can approximate most functions very well using neural networks (<a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem" target="_blank">under mild assumptions, we can approximate most functions <i>arbitrarily</i> well</a>). When using a neural network for classification, what we're really doing is approximating the classifier mentioned above, so when we train the network, it "learns" the classifier function.</p>
           <p>One of the most simple neural network architectures is as the function $\varphi\colon\mathbb{R}^d\to\mathbb{R}^k$,
-            \[
+          <p class="math-equation">
+						\[
               \varphi(\mathbf{x}) = \varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots))).
             \]
+					</p>
           <p>Each $\varphi_\ell$ is called the $\ell$-th <b>layer</b> of our neural network (so the neural network has $r$ layers) and has the form</p>
-            \[
+          <p class="math-equation">
+						\[
               \varphi_\ell(\mathbf{z}) = W^\ell\sigma{(\mathbf{z})} + \mathbf{b}^\ell,
             \]
+					</p>
           <p>where $\sigma\colon\mathbb{R}\to\mathbb{R}$ is the <b>activation function</b>, applied to each component separately, $W^\ell$ is some matrix containing <b>weights</b>, and $\mathbf{b}^\ell$ is a vector called the <b>bias</b>.</p>
           <p>To see what "applied to each component separately" means, look at the following formula:</p>
-            \[
+          <p class="math-equation">
+						\[
               \sigma{(\mathbf{x})} = \begin{pmatrix}\sigma{(\mathbf{x}_1)} & \sigma{(\mathbf{x}_2)} & \sigma{(\mathbf{x}_3)} & \cdots\ \end{pmatrix}^\top.
             \]
+					</p>
           <p>This may look intimidating, but it's only the notation that's scary when it comes to neural networks. In reality, the model is very simple. Each layer does the following things:</p>
           <ol>
             <li>Take an input vector $\mathbf{z}$</li>
@@ -107,56 +113,74 @@
           <p>The next step is to figure out how to train a neural network so that it approximates the classifier better and better. To do so, like any other machine learning problem, we have to find an optimization problem to solve.</p>
           <p>First, we would like to be able to have a probabilistic interpretation of our neural network (you'll see why in a bit). To do that, we first need to normalize the output of our neural network so that each component of the output vector is a probability, i.e., a number between $0$ and $1$, so that we can use maximum likelihood estimates to train our network. There are a number of ways to do this, but the most popular way to do it is to add a softmax layer to our neural network.</p>
           <p>The softmax function, $s$, is given as follows: If we have a vector $\mathbf{z}$, then</p>
-            \[
+          <p class="math-equation">
+						\[
               s(\mathbf{z})_j = \frac{e^{\mathbf{z}_j}}{\displaystyle\sum_i e^{\mathbf{z}_i}},
             \]
+					</p>
           <p>where the sum is over the components of $\mathbf{z}$. In other words, the $j$-th component of the result vector $s(\mathbf{z})$ is given by the formula above. You can easily verify that each component of $s(\mathbf{z})$ is positive, and that adding together all of its components of gives you $1$, which allows us to interpret $s(\mathbf{z})_j$ as the probability that $\mathbf{z}$ is in class $j$.</p>
           <p>From now on, whenever we say our neural network has $r$ layers, it will actually have $r+1$ layers, with the last layer being the softmax layer. However, training will only be done on the first $r$ layers.</p>
           <p>Let's say we have some training data $D = \{\mathbf{x}_1, \ldots, \mathbf{x}_N\} \subseteq \mathbb{R}^d$ (i.e., $N$ pieces of data, all of which are $d$-dimensional), $k$ classes given by $C_1$, $C_2$, $\ldots$, and $C_k$, and an $r$-layer neural network</p>
-            \[
+          <p class="math-equation">
+						\[
               \varphi(\mathbf{x}) = s(\varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots)))).
             \]
+					</p>
           <p>We want to train our parameters $W$ (which contains the weights and bias for every layer) to maximize the probability that our training data is classified correctly.</p>
           <p>To figure that out, we need to first figure out the probability that one point is classified correctly. Let's say that $\mathbf{x}_n \in C_j$, i.e., the piece of data $\mathbf{x}_n$ is in class $j$.</p>
           <p>To make writing things a bit easier, we'll introduce the following function:</p>
-            \[
+          <p class="math-equation">
+						\[
               t_{nj} =
               \begin{cases}
                 1 & \text{if } x_n \text{ is in class } j \\
                 0 & \text{otherwise}.
               \end{cases}
             \]
+					</p>
           <p>To put it simply, $t_{nj}$ keeps track of what class each data point is in.</p>
           <p>The probability that $\mathbf{x}_n$ is classified correctly given our weights $W$ is then</p>
-            \[
+          <p class="math-equation">
+						\[
               P(\mathbf{x}_n \in C_j \mid W) = \varphi(\mathbf{x})_j \overset{\text{def}}{=} y_{nj}.
             \]
+					</p>
           <p>However, a more convenient way to write it (as you'll see later) is</p>
-            \[
+          <p class="math-equation">
+						\[
               P(\mathbf{x}_n \in C_j \mid W) = \prod_{i=1}^k P(\mathbf{x}_n \in C_i \mid W)^{t_{ni}} = \prod_{i=1}^k y_{ni}^{t_{ni}}.
             \]
+					</p>
           <p>This is true since we will end up multiplying $P(\mathbf{x}_n \in C_j)$ by a bunch of $1$'s.</p>
           <p>Each data point is also classified independently of the one before it, so the probability that the entire data set is classified correctly is just the product of every probability, which is given by</p>
-            \[
+          <p class="math-equation">
+						\[
               P(D \mid W) = \prod_{n=1}^N \prod_{i=1}^k y_{ni}^{t_{ni}}.
             \]
+					</p>
           <p>This is the quantity that we want to maximize. Since $\log(\cdot)$ is strictly increasing, maximizing $P(D \mid W)$ is the same as maximizing $\log{P(D \mid W)}$, which is the same as minimizing $-\log{P(D \mid W)}$. Thus, our optimization problem is equivalent to</p>
             \begin{align*}
               &\min_W -\log{P(D \mid W)} \\
               ={}&\min_W -\sum_{n=1}^N \sum_{i=1}^k t_{ni}\log{y_{ni}}.
             \end{align*}
           <p>We'll define</p>
-            \[
+          <p class="math-equation">
+						\[
               E_n(W) = \sum_{i=1}^k t_{ni}\log{y_{ni}}
             \]
+					</p>
           <p>so that we can write our objective function (also called the energy function) as</p>
-            \[
+          <p class="math-equation">
+						\[
               E(w) = -\sum_{n=1}^N \left(\sum_{i=1}^k t_{ni}\log{y_{ni}}\right) = -\sum_{n=1}^N E_n(W).
             \]
+					</p>
           <p>Now we can write our optimization problem as</p>
-            \[
+          <p class="math-equation">
+						\[
               \min_W E(W).
             \]
+					</p>
           <p>To minimize $E(W)$, we will use stochastic gradient descent (SGD) instead of our regular gradient descent. SGD is given by the following algorithm:</p>
           <div class="algorithm">
               <p>Repeat until "convergence":</p>
@@ -167,13 +191,17 @@
           <p>In other words, we perform gradient descent on the energy function associated with a randomly chosen training point until the algorithm "converges." We don't actual expect the process to ever converge, but after many epochs, we still expect the neural network to perform well.</p>
           <p>The next section describes how (in gory detail) to derive the formulas needed to do gradient descent. If you're not interested in the calculations, you can just skip to the bottom and see the results.</p>
           <p>The last thing we need to do is figure out how to calculate $\nabla E_n$, which means we need to calculate the partial derivatives</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial E_n}{\partial W^\ell_{ij}} \quad\text{and}\quad \frac{\partial E_n}{\partial \mathbf{b}^\ell_j}
             \]
+					</p>
           <p>for every layer $\ell$ and every weight. Looking at the neural network</p>
-            \[
+          <p class="math-equation">
+						\[
               \varphi(\mathbf{x}) = s(\varphi_r(\varphi_{r-1}(\varphi_{r-2}(\cdots\varphi_2(\varphi_1(\mathbf{x}))\cdots))))
             \]
+					</p>
           <p>again, we see that the na&iuml;ve approach would be to use the chain rule $r+1$ times for each layer for every single weight for every iteration. This is impractical and would cause training to take so long that neural networks would be useless. Thankfully, however, we have something called backpropagation, which allows us to calculate the gradient relatively fast.</p>
           <p>Backpropagation is actually just the (multivariable) chain rule. Before we start, let's introduce some notation and visualize the connections between layers $\ell-1$ and $\ell$.</p>
           <p>Let $\mathbf{z}^0$ be the input vector. Then we'll define the following:</p>
@@ -187,21 +215,29 @@
           <p>On the left are the components of the vector $\mathbf{z}^{\ell-1}$ (each point is called a <b>neuron</b>), and on the right are the components of $\mathbf{z}^\ell$. Each neuron on the left is connected to the right via a weight and a bias for each component. There's an activation involved, but for simplicity, we'll keep it out of the diagram.</p>
           <p>To see why $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^\ell_j$ are connected by $W^\ell_{ji}$ and $\mathbf{b}^\ell_j$, we just need to think about how matrix multiplication works. The $j$-th component of $\mathbf{z}^\ell$ comes from a linear combination of the $j$-th row of $W^\ell$, which is why the first index is $j$. When we apply $W^\ell$ to $\sigma{(\mathbf{z}^{\ell-1})}$, only the $i$-th column of $W^\ell$ interacts with the vector, so the second index is $i$. Additionally, because of vector addition, only the $j$-th component of $\mathbf{b}^\ell$ contributes to the $j$-th component of $\mathbf{z}^\ell_j$, so the connection can be visualized by the above.</p>
           <p>The only quantities that are associated with $W_{ji}^\ell$ and $\mathbf{b}^\ell_j$ are $\mathbf{z}^{\ell-1}_i$ and $\mathbf{z}^{\ell}_j$, so we can use the single variable chain rule to get</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial E_n}{\partial W^\ell_{ji}} = \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} \frac{\partial \mathbf{z}^\ell_j}{\partial W^\ell_{ji}}.
             \]
+					</p>
           <p>Similarly, taking the derivative with respect to $\mathbf{b}^\ell_j$, we get</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial E_n}{\partial \mathbf{b}^\ell_j} = \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} \frac{\partial \mathbf{z}^\ell_j}{\partial \mathbf{b}^\ell_j}
             \]
+					</p>
           <p>The quantities are related by the following equation:</p>
-            \[
+          <p class="math-equation">
+						\[
               \mathbf{z}^{\ell}_j = \sum_i W^{\ell}_{ji}\mathbf{a}^{\ell-1}_i + \mathbf{b}^{\ell}_j,
             \]
+					</p>
           <p>so taking the derivative with respect to $W^{\ell}_{ji}$ and $\mathbf{b}^\ell_j$, we get</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial \mathbf{z}^\ell_j}{\partial W^\ell_{ji}} = \mathbf{a}^{\ell-1}_i \quad\text{and}\quad \frac{\partial \mathbf{z}^\ell_j}{\partial \mathbf{b}^\ell_j} = 1,
             \]
+					</p>
           <p>respectively.</p>
           <p>We'll also call $\dfrac{\partial E_n}{\partial \mathbf{z}^\ell_j} = \delta^\ell_j$, for convenience. Substituting, we get</p>
             \begin{align*}
@@ -211,25 +247,35 @@
           <p>We have access to $\mathbf{a}^{\ell-1}_i$, so the next thing we need to do is be able to calculate $\delta^\ell_j = \dfrac{\partial E_n}{\partial \mathbf{z}^\ell_j}$. To do that, we look at how $\mathbf{z}^\ell_j$ affects the next layer.</p>
           <img id="neural-network-2" src="../resources/img/neural-network-2.png">
           <p>We see that changing $\mathbf{z}^\ell_j$ changes every quantity in the next layer, which in turns changes $E_n(W)$, so by the chain rule,</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} = \sum_i \frac{\partial E_n}{\partial \mathbf{z}^{\ell+1}_i}\frac{\partial \mathbf{z}^{\ell+1}_i}{\partial \mathbf{z}^\ell_j}.
             \]
+					</p>
           <p>Since $\delta^\ell_j= \dfrac{\partial E_n}{\partial \mathbf{z}^\ell_j}$, we can write the above as</p>
-            \[
+          <p class="math-equation">
+						\[
               \delta^\ell_j = \sum_i \delta^{\ell+1}_i\frac{\partial \mathbf{z}^{\ell+1}_i}{\partial \mathbf{z}^\ell_j}.
             \]
+					</p>
           <p>Recall that $\mathbf{z}^{\ell+1}_i$ and $\mathbf{z}^{\ell}_j$ are related as follows:</p>
-            \[
+          <p class="math-equation">
+						\[
               \mathbf{z}^{\ell+1}_i = \sum_j W^{\ell+1}_{ij}\sigma{(\mathbf{z}^{\ell}_j)} + \mathbf{b}^{\ell+1}_i.
             \]
+					</p>
           <p>Taking the derivative with respect to $\mathbf{z}^\ell_j$ on both sides,</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial \mathbf{z}^{\ell+1}_i}{\partial \mathbf{z}^\ell_j} = W^{\ell+1}_{ij}\sigma'{(\mathbf{z}^\ell_j)}
             \]
+					</p>
           <p>Thus,</p>
-            \[
+          <p class="math-equation">
+						\[
               \delta^\ell_j = \sum_i \delta^{\ell+1}_iW^{\ell+1}_{ij}\sigma'{(\mathbf{z}^\ell_j)}.
             \]
+					</p>
           <p>We now (almost) have a means of calculating $\nabla E_n(W)$ efficiently:</p>
             \begin{align*}
               \frac{\partial E_n}{\partial W^\ell_{ji}} &= \delta_j^\ell \mathbf{a}^{\ell-1}_i \\
@@ -243,13 +289,17 @@
               y_{nj} &= s(\mathbf{z}^r)_j = \frac{e^{\mathbf{z}^r_j}}{\displaystyle\sum_i e^{\mathbf{z}^r_i}}.
             \end{align*}
           <p>Then by the chain rule,</p>
-            \[
+          <p class="math-equation">
+						\[
               \delta_j^{r+1} = \frac{\partial E_n}{\partial \mathbf{z}^\ell_j} = \sum_i \frac{\partial E_n}{\partial y_{ni}}\frac{\partial y_{ni}}{\partial \mathbf{z}^\ell_j}.
             \]
+					</p>
           <p>The first term is easy to calculate:</p>
-            \[
+          <p class="math-equation">
+						\[
               E_n(W) = \sum_{i=1}^k t_{ni}\log{y_{ni}} \implies \frac{\partial E_n}{\partial y_{nj}} = \frac{t_{nj}}{y_{nj}}.
             \]
+					</p>
           <p>The second term is a little more difficult, and there are two cases.</p>
           <p>If $i = j$:</p>
             \begin{align*}
@@ -266,21 +316,27 @@
               &= y_{nj}(0 - y_{ni}).
             \end{align*}
           <p>In general, we get that</p>
-            \[
+          <p class="math-equation">
+						\[
               \frac{\partial y_{ni}}{\partial \mathbf{z}^{\ell}_j} = y_{nj}(I_{ij} - y_{ni}),
             \]
+					</p>
           <p>where</p>
-            \[
+          <p class="math-equation">
+						\[
               I_{ij} =
                 \begin{cases}
                   1 & \text{if } i = j \\
                   0 & \text{otherwise}.
                 \end{cases}
             \]
+					</p>
           <p>Substituting, we finally get</p>
-            \[
+          <p class="math-equation">
+						\[
               \delta_j^{r+1} = \sum_i \frac{\partial E_n}{\partial y_{ni}}\frac{\partial y_{ni}}{\partial \mathbf{z}^\ell_j} = \sum_i \frac{t_{nj}}{y_{nj}}y_{nj}(I_{ij} - y_{ni}) = \sum_i t_{nj}(I_{ij} - y_{ni}).
             \]
+					</p>
           <p>Remember that $t_{nj}$ is $1$ when $\mathbf{x}_n$ is in class $j$ and $0$ otherwise, so we can simplify this to</p>
           <p>Thus, the algorithm for one iteration of SGD is</p>
           <ol>
