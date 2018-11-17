@@ -104,7 +104,7 @@
                 (Activation functions need to be continuous and monotonically increasing. The most common activation functions are $\operatorname{ReLu}(x)$ and $\tanh(x)$.)
             </li>
             <li>
-                Apply an linear transformation to the result (go from $\sigma{(\mathbf{z})}$ to $W^\ell\sigma{(\mathbf{z})} + \mathbf{b}^\ell$)
+                Apply a linear transformation to the result (go from $\sigma{(\mathbf{z})}$ to $W^\ell\sigma{(\mathbf{z})} + \mathbf{b}^\ell$)
                 <br>
                 (The transformation is actually affine, but for simplicity, we'll call it linear.)
             </li>
@@ -172,7 +172,7 @@
           <p>so that we can write our objective function (also called the energy function) as</p>
           <p class="math-equation">
 						\[
-              E(w) = -\sum_{n=1}^N \left(\sum_{i=1}^k t_{ni}\log{y_{ni}}\right) = -\sum_{n=1}^N E_n(W).
+              E(W) = -\sum_{n=1}^N \left(\sum_{i=1}^k t_{ni}\log{y_{ni}}\right) = -\sum_{n=1}^N E_n(W).
             \]
 					</p>
           <p>Now we can write our optimization problem as</p>
@@ -297,10 +297,10 @@
           <p>The first term is easy to calculate:</p>
           <p class="math-equation">
 						\[
-              E_n(W) = \sum_{i=1}^k t_{ni}\log{y_{ni}} \implies \frac{\partial E_n}{\partial y_{nj}} = \frac{t_{nj}}{y_{nj}}.
+              E_n(W) = \sum_{i=1}^k t_{ni}\log{y_{ni}} \implies \frac{\partial E_n}{\partial y_{nj}} = \frac{t_{nj}}{y_{nj}},
             \]
 					</p>
-          <p>The second term is a little more difficult, and there are two cases.</p>
+          <p>since $t_{nj}$ is $1$ when $i = j$ and $0$ otherwise. The second term is a little more difficult, and there are two cases.</p>
           <p>If $i = j$:</p>
             \begin{align*}
               \frac{\partial y_{nj}}{\partial \mathbf{z}^{\ell}_j} &= \frac{\partial}{\partial \mathbf{z}^{\ell}_j}\frac{e^{\mathbf{z}^r_j}}{\displaystyle\sum_i e^{\mathbf{z}^r_i}} \\
@@ -337,7 +337,6 @@
               \delta_j^{r+1} = \sum_i \frac{\partial E_n}{\partial y_{ni}}\frac{\partial y_{ni}}{\partial \mathbf{z}^\ell_j} = \sum_i \frac{t_{nj}}{y_{nj}}y_{nj}(I_{ij} - y_{ni}) = \sum_i t_{nj}(I_{ij} - y_{ni}).
             \]
 					</p>
-          <p>Remember that $t_{nj}$ is $1$ when $\mathbf{x}_n$ is in class $j$ and $0$ otherwise, so we can simplify this to</p>
           <p>Thus, the algorithm for one iteration of SGD is</p>
           <ol>
             <li>Send $\mathbf{x}_n$ through the neural net</li>
@@ -348,8 +347,8 @@
             <li>Perform gradient descent with $W_{\text{new}} = W_{\text{old}} - \eta\nabla E_n(W_{\text{old}})$</li>
           </ol>
           <p>The math is pretty involved, but at the end of the day, backpropagation is just the chain rule, and the resulting algorithm is easy to implement.</p>
-          <p>After enough training, we can classify points by sending them through the neural net, and picking the component with the largest number. From a probability viewpoint, the neural network calculates the probability a point is in a particular class for each class, so we naturally pick the class with the largest probability for classification.</p>
-          <p>In summary, neural networks are used to approximate functions, and the approximations are improved (i.e., the neural network learns the classifier function) by maximizing the probability that our training data is classified correctly via stochastic gradient descent.</p>
+          <p>After enough training, we can classify points by sending them through the neural net, and picking the component with the largest number. From a probabilistic viewpoint, the neural network calculates the probability a point is in a particular class for each class, so we naturally pick the class with the largest probability for classification.</p>
+          <p>In summary, neural networks are used to approximate functions, and the approximations are improved (i.e., the neural network learns the classifier function) by maximizing the probability that our training data is in its proper class via stochastic gradient descent.</p>
           <p>Neural networks aren't just limited to learning classifiers; they can learn how to <a href="http://papers.nips.cc/paper/5423-generative-adversarial-nets" target="_blank">generate images</a>, <a href="https://arxiv.org/abs/1312.5602" target="_blank">play games</a>, etc., but you'll find that coming up with those models is similar to what we've done here.</p>
           <p class="footnote">August 26th, 2018</p>
         </div>
