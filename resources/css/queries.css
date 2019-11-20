@@ -25,6 +25,12 @@
 
 @media only screen and (max-width: 480px)
 {
+  /* ---- Header ---- */
+  header { background-attachment: scroll }
+
+  /* ---- Footer ---- */
+  footer { background-attachment: scroll }
+
   /* ---- Reused Components ---- */
   body { width: 100vw; }
   h1 { font-size: 200%; }
