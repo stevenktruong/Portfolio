@@ -1,324 +1,280 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-135966476-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <head lang="en">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135966476-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-      gtag("config", "UA-135966476-1");
-    </script>
+            gtag("config", "UA-135966476-1");
+        </script>
 
-    <title>Steven Truong</title>
+        <title>Steven Truong</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="resources/img/favicon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,400,900"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Oxygen:400"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Merriweather:300,400"
-      rel="stylesheet"
-    />
-    <link href="resources/css/normalize.css" rel="stylesheet" />
-    <link href="resources/css/main.css" rel="stylesheet" />
-    <link href="resources/css/queries.css" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/png" href="resources/img/favicon.png" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            crossorigin="anonymous"
+        />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:400" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet" />
+        <link href="resources/css/normalize.css" rel="stylesheet" />
+        <link href="resources/css/main.css" rel="stylesheet" />
+        <link href="resources/css/queries.css" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="resources/js/main.js"></script>
-  </head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="resources/js/main.js"></script>
+    </head>
 
-  <body id="main">
-    <nav>
-      <a href="#main" class="header-name">ST</a>
-      <div class="nav-desktop">
-        <ul class="nav-buttons">
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
-          <li><a href="math.html">Math</a></li>
-        </ul>
-      </div>
-      <div class="nav-mobile clearfix">
-        <div class="menu-button">
-          <div class="top-bar"></div>
-          <div class="middle-bar"></div>
-          <div class="bottom-bar"></div>
-        </div>
-        <ul class="nav-mobile-buttons">
-          <li><a href="math.html">Math</a></li>
-          <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <header>
-      <div class="darken">
-        <h1>Steven Truong</h1>
-      </div>
-    </header>
-
-    <section class="bio clearfix">
-      <div class="row">
-        <img src="resources/img/me.png" alt="Picture of me" class="portrait" />
-        <h2>Who Am I?</h2>
-        <p>
-          I'm a fourth year undergraduate mathematics of computation major at
-          UCLA. My favorite math subjects are functional analysis and
-          differential geometry. I'm also a
-          <a href="https://www.math.ucla.edu/ugrad/scholar" target="_blank"
-            >Departmental Scholar</a
-          >
-          in the math department here.
-        </p>
-      </div>
-    </section>
-
-    <section class="experience">
-      <div class="row">
-        <h2>My Work Experience</h2>
-        <div class="project clearfix">
-          <h3>AWS Service Quotas</h3>
-          <a
-            href="https://docs.aws.amazon.com/servicequotas/index.html"
-            target="_blank"
-            class="project-image clearfix"
-            ><img src="resources/img/aws.png" alt="AWS logo"
-          /></a>
-          <p>
-            In the summer of 2019, I was an SDE intern at AWS Service Quotas in
-            Seattle. Service Quotas is (at the time of writing this) a brand new
-            AWS service that helps customers manage and request increases on
-            quotas on the services that they use.
-          </p>
-          <br />
-          <p>
-            Our codebase was written in Java, which I had to learn while working
-            on my project. My task for the summer was to create
-            <a href="https://aws.amazon.com/cloudtrail/" target="_blank"
-              >CloudTrail</a
-            >
-            notifications when service quotas increase requests have been
-            approved.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="row">
-        <h2>My Projects</h2>
-        <div class="project clearfix">
-          <h3>BruinMeet</h3>
-          <a
-            href="https://www.bruinmeet.com/"
-            target="_blank"
-            class="project-image clearfix"
-            ><img src="resources/img/bruinmeet.png" alt="BruinMeet logo"
-          /></a>
-          <p>
-            I'm currently one of the back-end developers for
-            <a href="https://www.bruinmeet.com/" target="_blank">BruinMeet</a>,
-            which is a UCLA-exclusive dating app.
-          </p>
-          <br />
-          <p>
-            We use Node.js on the back-end, and I've worked on features such as
-            custom profile pictures and mobile notifications.
-          </p>
-        </div>
-        <div class="project clearfix">
-          <h3>Discord Pick-up Game Bot</h3>
-          <a
-            href="https://github.com/stevenktruong/pug-bot"
-            target="_blank"
-            class="project-image clearfix"
-            ><img src="resources/img/pug-bot.png" alt="pug-bot screenshot"
-          /></a>
-          <p>
-            <a href="https://github.com/stevenktruong/pug-bot" target="_blank"
-              >pug-bot</a
-            >
-            is a
-            <a href="https://discordapp.com/" , target="_blank">Discord</a> bot
-            used for organizing pick-up games. It's programmed entirely in
-            Python 3.
-          </p>
-          <br />
-          <p>
-            The bot makes it easy to visualize the teams: everyone can see who's
-            on each team and which players who haven't been picked yet. It also
-            automatically moves the teams to separate voice channels as soon the
-            the PUG is started.
-          </p>
-          <br />
-          <p>
-            Its other features include randomizing teams and captains, custom
-            lobby names and sizes, custom team names, and picking voice channels
-            for a team.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills">
-      <div class="row">
-        <h2>My Skills</h2>
-        <div class="skill-row clearfix">
-          <div class="skill-col">
-            <div>
-              <img src="resources/img/html-css-js.png" alt="HTML/CSS/JS logo" />
+    <body id="main">
+        <nav>
+            <a href="#main" class="header-name">ST</a>
+            <div class="nav-desktop">
+                <ul class="nav-buttons">
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
+                    <!-- <li><a href="math.html">Math</a></li> -->
+                </ul>
             </div>
-            <p>
-              This website was made with HTML, CSS, and JavaScript mostly from
-              scratch.
-            </p>
-            <br />
-            <p>
-              The outside resources I used were
-              <a href="https://necolas.github.io/normalize.css/" target="_blank"
-                >normalize.css</a
-              >, <a href="https://jquery.com/" target="_blank">jQuery</a>,
-              <a href="https://www.mathjax.org/" target="_blank">MathJax</a>,
-              and various logos.
-            </p>
-          </div>
-          <div class="skill-col">
-            <div>
-              <img
-                src="resources/img/latex.png"
-                alt="LaTeX logo"
-                style="padding-top: 18px"
-              />
+            <div class="nav-mobile clearfix">
+                <div class="menu-button">
+                    <div class="top-bar"></div>
+                    <div class="middle-bar"></div>
+                    <div class="bottom-bar"></div>
+                </div>
+                <ul class="nav-mobile-buttons">
+                    <li><a href="math.html">Math</a></li>
+                    <li><a href="files/resume.pdf" target="_blank">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <p>
-              I've been using LaTeX for all of my math homework since my first
-              year in college. You can check them out on my
-              <a href="https://github.com/stevenktruong" target="_blank"
-                >GitHub</a
-              >.
-            </p>
-            <br />
-            <p>
-              I'm also currently working on a short differential equations book
-              based on my notes for the introductory differential equations
-              class (<a
-                href="https://www.math.ucla.edu/ugrad/courses/math/33B"
-                target="_blank"
-                >MATH 33B</a
-              >).
-            </p>
-          </div>
-        </div>
-        <div class="skill-row clearfix">
-          <div class="skill-col">
-            <div><img src="resources/img/nodejs.png" alt="Node.js logo" /></div>
-            <p>
-              I've been using Node.js on a weekly basis for
-              <a href="#projects" target="_blank">BruinMeet</a> since January
-              2018.
-            </p>
-            <br />
-            <p>
-              I have experience working with a mongoDB and the
-              <a href="http://mongoosejs.com/" target="_blank">Mongoose</a>
-              module for Node. I also created the back-end for managing our
-              notifications, and I helped secure an API endpoint for grabbing
-              photos.
-            </p>
-            <br />
-            <p>
-              In addition, I've implemented several features using the
-              <a href="https://aws.amazon.com/" target="_blank">Amazon AWS</a>
-              SDK for Node, such as storing our images on an S3 bucket as well
-              as mobile notifications through SNS.
-            </p>
-          </div>
-          <div class="skill-col">
-            <div><img src="resources/img/cpp.png" alt="C++ logo" /></div>
-            <p>I've taken the two C++ classes at UCLA (CS 31, 32).</p>
-            <br />
-            <p>
-              I'm familiar with various data structures, their uses, as well as
-              their time complexity. I'm also comfortable with object-oriented
-              programming, which was the focus of CS 32.
-            </p>
-          </div>
-        </div>
-        <div class="skill-row clearfix">
-          <div class="skill-col">
-            <div><img src="resources/img/python.png" alt="Python logo" /></div>
-            <p>
-              I worked on a few
-              <a href="#projects" target="_blank">projects</a> in
-              <a href="https://www.python.org/" target="_blank">Python</a>.
-            </p>
-            <br />
-            <p>
-              I'm familiar with the
-              <a
-                href="https://discordapp.com/developers/applications/me"
-                target="_blank"
-                >Discord API</a
-              >
-              since I created a bot for it.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </nav>
 
-    <footer id="contact">
-      <div class="darken">
-        <div class="row">
-          <h2>Contact Me</h2>
-          <ul class="contact-info">
-            <li>
-              <i class="fas fa-envelope icon-small"></i
-              ><a href="mailto:steventruong@g.ucla.edu"
-                >steventruong@g.ucla.edu</a
-              >
-            </li>
-            <li>
-              <i class="fab fa-github icon-small"></i
-              ><a href="https://github.com/stevenktruong" target="_blank"
-                >stevenktruong</a
-              >
-            </li>
-            <li>
-              <i class="fab fa-linkedin icon-small"></i
-              ><a
-                href="https://www.linkedin.com/in/stevenktruong/"
-                target="_blank"
-                >Steven Truong</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </body>
+        <header>
+            <div class="darken">
+                <h1>Steven Truong</h1>
+            </div>
+        </header>
+
+        <section class="bio clearfix">
+            <div class="row">
+                <img src="resources/img/me.png" alt="Picture of me" class="portrait" />
+                <h2>Who Am I?</h2>
+                <p>
+                    I am a first year Ph.D. student at the
+                    <a href="https://ww3.math.ucla.edu/">UCLA Department of Mathematics</a>. I was also an undergraduate
+                    at UCLA, where I obtained both my B.S. in Mathematics of Computation and my M.A. in Mathematics
+                    <a href="https://www.math.ucla.edu/ugrad/scholar">concurrently</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="experience">
+            <div class="row">
+                <h2>My Work Experience</h2>
+                <div class="project clearfix">
+                    <h3>Amazon Lab126</h3>
+                    <a href="https://amazon.jobs/en/teams/lab126/" target="_blank" class="project-image clearfix"
+                        ><img src="resources/img/lab126.png" alt="Amazon Lab126 logo"
+                    /></a>
+                    <p>
+                        I returned to intern at Amazon in the summer of 2020, which was remote this year due to
+                        COVID-19. This year, I assisted the Alexa team with a new feature.
+                    </p>
+                    <br />
+                    <p>
+                        My task was to build an application that will help the team visualize collected data and analyze
+                        how accurate they were compared to real world data. I had to write the project from scratch, and
+                        I also had to choose the technology stack that would be used. I settled on React.js (which I had
+                        to learn on the job) for the front-end, and I used Node.js to write the back-end.
+                    </p>
+                </div>
+                <div class="project clearfix">
+                    <h3>AWS Service Quotas</h3>
+                    <a
+                        href="https://docs.aws.amazon.com/servicequotas/index.html"
+                        target="_blank"
+                        class="project-image clearfix"
+                        ><img src="resources/img/aws.png" alt="AWS logo"
+                    /></a>
+                    <p>
+                        In the summer of 2019, I was an SDE intern at AWS Service Quotas in Seattle. Service Quotas is
+                        (at the time of writing this) a brand new AWS service that helps customers manage and request
+                        increases on quotas on the services that they use.
+                    </p>
+                    <br />
+                    <p>
+                        Our codebase was written in Java, which I had to learn while working on my project. My task for
+                        the summer was to create
+                        <a href="https://aws.amazon.com/cloudtrail/" target="_blank">CloudTrail</a>
+                        notifications when service quotas increase requests have been approved.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="row">
+                <h2>My Projects</h2>
+                <div class="project clearfix">
+                    <h3>BruinMeet</h3>
+                    <a href="https://www.bruinmeet.com/" target="_blank" class="project-image clearfix"
+                        ><img src="resources/img/bruinmeet.png" alt="BruinMeet logo"
+                    /></a>
+                    <p>
+                        I was one of the back-end developers for
+                        <a href="https://www.bruinmeet.com/" target="_blank">BruinMeet</a>, which was a UCLA-exclusive
+                        dating app before we shut down.
+                    </p>
+                    <br />
+                    <p>
+                        We use Node.js on the back-end, and I've worked on features such as custom profile pictures and
+                        mobile notifications.
+                    </p>
+                </div>
+                <div class="project clearfix">
+                    <h3>Discord Pick-up Game Bot</h3>
+                    <a href="https://github.com/stevenktruong/pug-bot" target="_blank" class="project-image clearfix"
+                        ><img src="resources/img/pug-bot.png" alt="pug-bot screenshot"
+                    /></a>
+                    <p>
+                        <a href="https://github.com/stevenktruong/pug-bot" target="_blank">pug-bot</a>
+                        is a
+                        <a href="https://discordapp.com/" , target="_blank">Discord</a> bot used for organizing pick-up
+                        games. It's programmed entirely in Python 3.
+                    </p>
+                    <br />
+                    <p>
+                        The bot makes it easy to visualize the teams: everyone can see who's on each team and which
+                        players who haven't been picked yet. It also automatically moves the teams to separate voice
+                        channels as soon the the PUG is started.
+                    </p>
+                    <br />
+                    <p>
+                        Its other features include randomizing teams and captains, custom lobby names and sizes, custom
+                        team names, and picking voice channels for a team.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <div class="row">
+                <h2>My Skills</h2>
+                <div class="skill-row clearfix">
+                    <div class="skill-col">
+                        <div>
+                            <img src="resources/img/html-css-js.png" alt="HTML/CSS/JS logo" />
+                        </div>
+                        <p>This website was made with HTML, CSS, and JavaScript mostly from scratch.</p>
+                        <br />
+                        <p>
+                            The outside resources I used were
+                            <a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>,
+                            <a href="https://jquery.com/" target="_blank">jQuery</a>,
+                            <a href="https://www.mathjax.org/" target="_blank">MathJax</a>, and various logos.
+                        </p>
+                    </div>
+                    <div class="skill-col">
+                        <div>
+                            <img src="resources/img/latex.png" alt="LaTeX logo" style="padding-top: 18px" />
+                        </div>
+                        <p>
+                            I've been using LaTeX for all of my math homework since my first year in college. You can
+                            check them out on my
+                            <a href="https://github.com/stevenktruong" target="_blank">GitHub</a>.
+                        </p>
+                        <br />
+                        <p>
+                            I'm also currently working on a short differential equations book based on my notes for the
+                            introductory differential equations class (<a
+                                href="https://www.math.ucla.edu/ugrad/courses/math/33B"
+                                target="_blank"
+                                >MATH 33B</a
+                            >).
+                        </p>
+                    </div>
+                </div>
+                <div class="skill-row clearfix">
+                    <div class="skill-col">
+                        <div><img src="resources/img/nodejs.png" alt="Node.js logo" /></div>
+                        <p>
+                            I've been using Node.js on a weekly basis for
+                            <a href="#projects" target="_blank">BruinMeet</a> since January 2018.
+                        </p>
+                        <br />
+                        <p>
+                            I have experience working with a mongoDB and the
+                            <a href="http://mongoosejs.com/" target="_blank">Mongoose</a>
+                            module for Node. I also created the back-end for managing our notifications, and I helped
+                            secure an API endpoint for grabbing photos.
+                        </p>
+                        <br />
+                        <p>
+                            In addition, I've implemented several features using the
+                            <a href="https://aws.amazon.com/" target="_blank">Amazon AWS</a>
+                            SDK for Node, such as storing our images on an S3 bucket as well as mobile notifications
+                            through SNS.
+                        </p>
+                    </div>
+                    <div class="skill-col">
+                        <div><img src="resources/img/cpp.png" alt="C++ logo" /></div>
+                        <p>I've taken the two C++ classes at UCLA (CS 31, 32).</p>
+                        <br />
+                        <p>
+                            I'm familiar with various data structures, their uses, as well as their time complexity. I'm
+                            also comfortable with object-oriented programming, which was the focus of CS 32.
+                        </p>
+                    </div>
+                </div>
+                <div class="skill-row clearfix">
+                    <div class="skill-col">
+                        <div><img src="resources/img/python.png" alt="Python logo" /></div>
+                        <p>
+                            I worked on a few
+                            <a href="#projects" target="_blank">projects</a> in
+                            <a href="https://www.python.org/" target="_blank">Python</a>.
+                        </p>
+                        <br />
+                        <p>
+                            I'm familiar with the
+                            <a href="https://discordapp.com/developers/applications/me" target="_blank">Discord API</a>
+                            since I created a bot for it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="darken">
+                <div class="row">
+                    <h2>Contact Me</h2>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope icon-small"></i
+                            ><a href="mailto:steven@math.ucla.edu">steven@math.ucla.edu</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-github icon-small"></i
+                            ><a href="https://github.com/stevenktruong" target="_blank">stevenktruong</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin icon-small"></i
+                            ><a href="https://www.linkedin.com/in/stevenktruong/" target="_blank">Steven Truong</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
